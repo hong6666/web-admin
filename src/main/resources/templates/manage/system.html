@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>系统设置</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="page-header">
+    <h1>网站底部信息</h1>
+</div>
+<br/>
+<div class="input-group input-group-lg"><!--input-group-lg-->
+    <span class="input-group-addon">营销中心</span>
+    <input type="text" class="form-control" id="address" th:value="${system.publicaddress}">
+</div><br>
+<div class="input-group input-group-lg"><!--input-group-lg-->
+    <span class="input-group-addon">公司厂址</span>
+    <input type="text" class="form-control" id="factoryAddress" th:value="${system.publicfactoryaddress}">
+</div><br>
+<div class="input-group input-group-lg"><!--input-group-lg-->
+    <span class="input-group-addon">联系电话</span>
+    <input type="text" class="form-control" id="telphone" th:value="${system.publictelephone}">
+</div><br>
+<button type="button" class="btn btn-primary" onclick="publicEdit()">保存</button>
+</body>
+<script th:inline="javascript">
+    function publicEdit() {
+        var publicInfo = {
+            _Method:"put",
+            publicinfoid:[[${system.publicinfoid}]],
+            publicaddress:$("#address").val(),
+            publicfactoryaddress:$("#factoryAddress").val(),
+            publictelephone:$("#telphone").val()
+        }
+        $.ajax({
+            url:"/manage/publicInfo",
+            type:"PUT",
+            data:JSON.stringify(publicInfo),
+            contentType:"application/json",
+            success: function (data) {
+                alert(data)
+            },
+            error:function (data) {
+                alert(data)
+            }
+        })
+    }
+</script>
+</html>

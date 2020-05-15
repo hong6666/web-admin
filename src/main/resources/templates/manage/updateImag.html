@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        div{
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" style="margin-top: 36px">
+    <div class="col-lg-11 col-md-12 col-sm-12 col-xs-12">
+
+        <h3>修改图片信息
+            <button type="button" class="btn btn-primary" onclick="javascript:history.go(-1)" >返回</button>
+        </h3>
+             <div class="input-group input-group-lg"><!--input-group-lg-->
+                 <span class="input-group-addon">排序</span>
+                 <input type="text" class="form-control" id="picturessort">
+             </div><br>
+
+
+             <div class="input-group input-group-lg">
+             <label class="input-group-addon">是否显示</label>
+             <!-- 样式1 -->
+             <select class="form-control" id="statearticle">
+             <option value="1">启用</option>
+             <option value="2">禁用</option>
+             </select>
+             </div><br/>
+
+
+             <div>
+
+    <script id="editor" type="text/plain" style="height:300px"></script><br/>
+          <button onclick="b()" class="btn btn-primary">提交</button>
+          </div>
+    </div>
+</div>
+
+        <script type="text/javascript">
+
+        function b() {
+            var nums = location.search;
+            var reg = /(?<==).*/g;
+            var picturesid = nums.match(reg).toString();
+            var article = {
+                picturesid:picturesid,
+                picturessort:$("#picturessort").val(),
+                state:$("#statearticle").val(),
+            }
+            $.ajax({
+                url:'/manage/productPictures/updateAll',
+                dataType:'json',
+                type:'PUT',
+                async: false,
+                data:JSON.stringify(article),
+                processData : false, // 使数据不做处理
+                contentType : "application/json", // 不要设置Content-Type请求头
+                success: function(data,status){
+                    alert('上传成功！');
+                    console.log(data);
+                    if (status == 'success') {
+                        alert('上传成功！');
+                    }
+                },
+                error:function(response){
+                    alert(response.responseText)
+                    console.log(response);
+                }
+            })
+        }
+          </script><br/>
+
+<script src="/static/js/cheshisix.js"></script><br/>
+
+
+<script>
+    function showDataTwo(data) {
+    picturessort = data.picturessort;
+    state = data.state;
+    $("#picturessort").val(picturessort);
+    $("#statearticle").val(state)
+    }
+</script><br/>
+
+</body>
+</html>

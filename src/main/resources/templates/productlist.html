@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>斯沃德教育科技股份有限公司</title>
+	<link rel="stylesheet" href="/static/css/reset.css" />
+	<link rel="stylesheet" href="/static/css/swiper.min.css" />
+	<link rel="stylesheet" href="/static/css/bootstrap.css">
+	<link rel="stylesheet" href="/static/css/head.css" />
+	<link rel="stylesheet" href="/static/css/mstyle.css">
+	<link rel="stylesheet" href="/static/css/zzsc.css">
+	<script src="/static/js/jquery.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/js/rangeslider.js"></script>
+	<script src="/static/js/slick.min.js"></script>
+	<link rel="stylesheet" href="/static/css/slick.css">
+	<link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+
+<!-- 导航 -->
+<!--页眉-->
+<div th:include="header"></div>
+
+<div class="banner">
+	<img src="../static/img/tiyan11.jpg">
+</div>
+<Div class=" eg">
+	<div class="swiper-container eg">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<img src="../static/img/模特轮播图南师附小-2.jpg">
+			</div>
+			<div class="swiper-slide">
+				<img src="../static/img/模特轮播图南师附小-3.jpg">
+			</div>
+			<div class="swiper-slide">
+				<img src="../static/img/模特轮播图南师附小-4.jpg">
+			</div>
+			<div class="swiper-slide">
+				<img src="../static/img/模特轮播图南师附小-5.jpg">
+			</div>
+			<div class="swiper-slide">
+				<img src="../static/img/模特轮播图南师附小-6.jpg">
+			</div>
+			<div class="swiper-slide">
+				<img src="../static/img/模特轮播图南师附小-7.jpg">
+			</div>
+			<div class="swiper-slide">
+				<img src="../static/img/模特轮播图南师附小-8.jpg">
+			</div>
+			<div class="swiper-slide">
+				<img src="../static/img/模特轮播图南师附小-1.jpg">
+			</div>
+		</div>
+
+
+		<!-- 如果需要导航按钮 -->
+		<div class="swiper-button-prev prev1 " style=""></div>
+		<div class="swiper-button-next next1" style=""></div>
+
+	</div>
+
+</Div>
+
+<div class="banner">
+	<img src="../static/img/tiyan12.jpg">
+</div>
+<Div class=" eg">
+	<div class="swiper-container eg">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide" style="width: 150px;">
+				<img src="../static/img/模特轮播外国语-2.jpg">
+			</div>
+			<div class="swiper-slide" style="width: 150px;">
+				<img src="../static/img/模特轮播外国语-3.jpg">
+			</div>
+			<div class="swiper-slide" style="width: 150px;">
+				<img src="../static/img/模特轮播外国语-4.jpg">
+			</div>
+			<div class="swiper-slide" style="width: 150px;">
+				<img src="../static/img/模特轮播外国语-5.jpg">
+			</div>
+			<div class="swiper-slide" style="width: 150px;">
+				<img src="../static/img/模特轮播外国语-6.jpg">
+			</div>
+			<div class="swiper-slide" style="width: 150px;">
+				<img src="../static/img/模特轮播外国语-7.jpg">
+			</div>
+			<div class="swiper-slide" style="width: 150px;">
+				<img src="../static/img/模特轮播外国语-8.jpg">
+			</div>
+			<div class="swiper-slide" style="width: 150px;">
+				<img src="../static/img/模特轮播外国语-9.jpg">
+			</div>
+			<div class="swiper-slide" style="width: 150px;">
+				<img src="../static/img/模特轮播外国语-10.jpg">
+			</div>
+			<div class="swiper-slide" style="width: 150px;">
+				<img src="../static/img/模特轮播外国语-11.jpg">
+			</div>
+			<div class="swiper-slide" style="width: 150px;">
+				<img src="../static/img/模特轮播外国语-12.jpg">
+			</div>
+			<div class="swiper-slide" style="width: 150px;">
+				<img src="../static/img/模特轮播外国语-1.jpg">
+			</div>
+
+		</div>
+
+
+		<!-- 如果需要导航按钮 -->
+		<div class="swiper-button-prev prev1 " style=""></div>
+		<div class="swiper-button-next next1" style=""></div>
+
+	</div>
+
+</Div>
+
+
+<div class="allprotit">
+	<p class="allprotit1">全部产品</p>
+	<p class="allprotit2">ALL PRODUCTS</p>
+</div>
+<Div class="container shaixuanqu">
+	<div class="shaixuan">
+		<span style="margin-right:10px "><img src="/static/img/shaixuan.png" style="margin-right: 10px">筛选：</span>
+		<div class="sxtiaojian">
+			<select class="selectpicker" onchange="setSelectSku()" id="season" >
+				<option value="0" disabled="disabled" selected="selected">选择季节</option>
+				<option value="1">春秋</option>
+				<option value="2">夏</option>
+				<option value="3">冬</option>
+			</select>
+		</div>
+		<div class="sxtiaojian">
+			<select class="selectpicker" onchange="setSelectPictures()" id="skus">
+				<option value="0">请选择风格</option>
+			</select>
+		</div>
+
+	</div>
+
+	<div class="shaxianpro" id="tab">
+
+	</div>
+</Div>
+<!-- 代码 开始 -->
+<div id="leftsead" style="margin-top: 75px">
+	<ul>
+		<li>
+			<a href="javascript:void(0)" class="youhui" style="text-decoration:none">
+				<img src="../static/img/li2.png" width="47" height="49" class="shows" />
+				<img src="../static/img/ewm222.png" width="145" class="2wm" style="display:none;margin:-100px 57px 0 0" />
+			</a>
+		</li>
+		<li id="tel">
+			<a href="javascript:void(0)" style="text-decoration:none">
+				<div class="hides" style="width:250px;display:none;" id="tels">
+					<div class="hides" id="p4">
+						<img src="../static/img/li1.png">
+					</div>
+					<div class="hides" id="p3"><span style="color:#FFF;font-size:12px;" >服务热线：400-90-10086</span>
+					</div>
+				</div>
+				<img src="../static/img/li1.png" width="47" height="49" class="shows" />
+			</a>
+		</li>
+		<li id="btn">
+			<a id="top_btn">
+				<!--<div class="hides" style="width:161px;display:none ;">-->
+				<!--<img src="../static/img/li3.png" width="47" height="49" />-->
+				<!--</div>-->
+				<img src="../static/img/li3.png" width="47" height="49"  />
+			</a>
+		</li>
+	</ul>
+</div>
+
+<script>
+
+    $(document).ready(function(){
+
+        $("#leftsead a").hover(function(){
+            if($(this).prop("className")=="youhui"){
+                $(this).children("img.hides").show();
+            }else{
+                $(this).children("div.hides").show();
+                $(this).children("img.shows").hide();
+                $(this).children("div.hides").animate({marginRight:'0px'},'0');
+            }
+        },function(){
+            if($(this).prop("className")=="youhui"){
+                $(this).children("img.hides").hide();
+            }else{
+                $(this).children("div.hides").animate({marginRight:'-163px'},0,function(){$(this).hide();$(this).next("img.shows").show();});
+            }
+        });
+
+        $("#top_btn").click(function(){if(scroll=="off") return;$("html,body").animate({scrollTop: 0}, 600);});
+
+        //右侧导航 - 二维码
+        $(".youhui").mouseover(function(){
+            $(this).children(".2wm").show();
+        })
+        $(".youhui").mouseout(function(){
+            $(this).children(".2wm").hide();
+        });
+
+
+    });
+
+
+</script>
+<!-- 代码 结束 -->
+
+<script src="/static/js/cheshi.js"></script>
+<!--页脚-->
+<div th:include="footer"></div>
+
+<script src="/static/js/swiper.min.js"></script>
+<script>
+    $(function(){
+        //超过一定高度导航添加类名
+        var nav=$("header"); //得到导航对象
+        var win=$(window); //得到窗口对象
+        var sc=$(document);//得到document文档对象。
+        win.scroll(function(){
+            if(sc.scrollTop()>=100){
+                nav.addClass("on");
+            }else{
+                nav.removeClass("on");
+            }
+        })
+
+        //移动端展开nav
+        $('#navToggle').on('click',function(){
+            $('.m_nav').addClass('open');
+        })
+        //关闭nav
+        $('.m_nav .top .closed').on('click',function(){
+            $('.m_nav').removeClass('open');
+        })
+
+        //二级导航  移动端
+        $(".m_nav .ul li").click(function() {
+            $(this).children("div.dropdown_menu").slideToggle('slow')
+            $(this).siblings('li').children('.dropdown_menu').slideUp('slow');
+        });
+
+    })
+</script>
+<script>
+    $('.shaixunname').click(function () {
+        $(this).toggleClass('on')
+        $(this).next().slideToggle()
+    })
+    var mySwiper = new Swiper ('.swiper-container', {
+        loop: true, // 循环模式选项
+
+        // 如果需要分页器
+        pagination: {
+            el: '.swiper-pagination',
+        },
+
+        // 如果需要前进后退按钮
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        slidesPerView :4,
+
+        slidesPerGroup : 3,
+
+    })
+</script>
+<script>
+    function showData(data) {
+        var str = "";//定义用于拼接的字符串
+        for (var i = 0; i < data.length; i++) {
+            //拼接表格的行和列
+            str = "<a class='col-lg-3 col-xs-6'>" +
+                "<img src='"+data[i].picturesurl+"'/>" + "</a>";
+            //追加到table中
+            $("#tab").append(str);         }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="form-group" style="margin-top: 80px">
+    <!--<div class="col-sm-3 control-label">选择文章上传缩略图。建议225px * 139px大小</div>-->
+    <label style="color: red">上传图片的比例要对应前台页面上相应图片的比例</label>
+    <div class="input-group">
+        <label class="input-group-btn">
+            <input type="button" id="i-check" value="浏览文件" class="btn btn-primary" onclick="$('#i-file').click();">
+        </label>
+        <input id='location' class="form-control" onclick="$('#i-file').click();">
+        <input type="file" name="file" id='i-file'  accept=".jpg, .jpeg,.png" onchange="$('#location').val($('#i-file').val());" style="display: none">
+    </div>
+</div><br>
+
+<button onclick="a()" class="btn btn-primary">开始上传</button>
+<br>
+<br>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <p id="addressurl"></p>
+    </div>
+</div>
+</div>
+<script>
+    function a() {
+        var formData = new FormData();
+        formData.append("file",$("#i-file")[0].files[0]);
+        $.ajax({
+            url:'/manage/upload/imgToFile/news',
+            dataType:'json',
+            type:'POST',
+            async: false,
+            data: formData,
+            processData : false, // 使数据不做处理
+            contentType : false, // 不要设置Content-Type请求头
+            function: function(response){
+                alert(response.responseText)
+                console.log(response);
+            },
+            error:function(response){
+                $("#addressurl").text(response.responseText)
+                alert(response.responseText)
+                console.log(response);
+            }
+        })
+    }
+</script>
+</body>
+</html>

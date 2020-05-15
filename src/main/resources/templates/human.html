@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>斯沃德教育科技股份有限公司</title>
+    <link rel="stylesheet" href="/static/css/reset.css" />
+    <link rel="stylesheet" href="/static/css/swiper.min.css" />
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/head.css" />
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/styletwo.css">
+    <link rel="stylesheet" href="/static/css/mstyle.css">
+    <link rel="stylesheet" href="/static/css/zzsc.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title></title>
+</head>
+<style>
+    .news-model{
+        position: relative;
+        top: 25px;
+        line-height: 2.5rem;
+        letter-spacing: 0.1875rem;
+        text-decoration: none;
+        margin: 35px;
+    }
+    .news-model .news-model-text{
+        position: relative;
+        margin: 0 auto;
+        background-color: rgb(242,242,242);
+        height: 395px;
+        border-radius: 0px 7px 7px 0px;
+        word-wrap: break-word;
+        word-break: break-all;
+        overflow: hidden;
+    }
+    .news-model .news-model-text p{
+
+        margin-left: 30px;
+    }
+    .thumbnail-p-text{
+        margin: 0;
+        position: relative;
+        top: 10px;
+    }
+    .imgbox{
+        border-radius: 7px 7px 7px 7px;
+        /*border:2px solid red;*/
+        width: 90%;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+    .img-bigger{
+        transition: transform 1s;
+    }
+    .img-bigger:hover{
+        transform: scale(1.1);
+    }
+    .text-bigger{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .text-bigger:hover{
+        color:#22a9eb;
+        padding-bottom:5px;
+        border-bottom:3px solid #22a9eb;
+        text-decoration:none;
+    }
+    .swiper-text{
+        color:#22a9eb;
+        padding-bottom:4px;
+        border-bottom:2px solid #22a9eb;
+    }
+    .ren-text{
+        background: #000;
+        opacity: 0.6;
+        color:#fff;
+        width: 100%;
+        height:60px;
+        position: absolute;
+        bottom: 5px;
+        left: 10px;
+        text-align: center;
+        line-height: 60px;
+        font-size: 26px;
+    }
+    .mask{
+        position: absolute;
+        top:0;
+        left: 5px;
+        width: 100%;
+        height: 280px;
+        margin: 5px;
+        background: rgba(0, 0, 0, 0.7);
+        color:#f5f1e5;
+        line-height: 30px;
+        text-align: center;
+        display: none;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+    }
+    .cp-title{
+        font-size:35px;
+        text-align:center;
+        line-height:8rem;
+        background:#b7ebfe;
+        color:black;
+    }
+
+    .ty2 .ren-img {
+        height:280px;
+        margin: 5px;
+
+    }
+    .mask-text-title{
+         font-size: 26px;
+     }
+    .mask-text{
+        font-size: 20px;
+    }
+    @media(max-width:500px){
+        .ty2 .ren-img{
+            height:200px;
+        }
+        .mask{
+            height:200px;
+        }
+        .mask-text-title{
+            font-size: 20px;
+        }
+        .mask-text{
+            font-size: 16px;
+        }
+        .ren-text{
+            font-size:20px;
+            height:40px;
+            line-height: 40px;
+        }
+    }
+    @media(max-width:768px) {
+        .cp-title {
+            font-size:28px;
+            line-height:6rem;
+        }
+    }
+    @media (max-width:992px) {
+        .ty2 .container{
+            width: 90%;
+        }
+    }
+</style>
+
+
+<body>
+<!-- 导航 -->
+<!--页眉-->
+<div th:include="header"></div>
+<!--页面上面一个图片-->
+<img src="img/2-1-1.png" class="img-responsive"/>
+
+<!--页面中部-->
+<!--第一轮-->
+<div class="news-model">
+    <div class="container" style="padding: 10px;">
+        <div style="border-bottom: solid 0px rgb(104,104,104); height: auto; padding: 5px;">
+            <span style="font-size: 24px;"><b>加入斯沃德</b></span>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12;" style="padding:24px 0px; ">
+            <div class="imgbox">
+                <a href="/position/page/1"> <img src="img/2-1-2.png" class="img-responsive img-bigger"></a>
+            </div>
+            <!--<img src="img/2-1-2.png" class="img-responsive" style="border-radius: 7px 0px 0px 7px;"/>-->
+            <a href="/position/page/1" class="text-bigger">社会招聘</a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="padding:24px 0px; ">
+            <div class="imgbox">
+                <a href="/position/page/1"> <img src="img/2-1-3.png" class="img-responsive img-bigger"></a>
+            </div>
+            <span ><a href="/position/page/1" class="text-bigger">校园招聘</a></span>
+        </div>
+    </div>
+</div>
+
+<div class="cp-title" style="background:#b7ebfe "><span>工作环境</span></div><!--3.5rem-->
+<section class="pc-banner" style="background: white">
+    <div class="swiper-container" style="width: 77%;">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="text-align: center;">
+                <div class="a-background" >
+                    <p><img src="img/banner001.jpg"></p>
+                </div>
+                <span class="swiper-text">设计展厅，品质校服</span>
+            </div>
+            <div class="swiper-slide" style="text-align: center;">
+                <div class="a-background" >
+                    <p><img src="img/banner002.jpg"></p>
+                </div>
+                <span class="swiper-text">营销大厅，开放空间</span>
+            </div>
+            <div class="swiper-slide" style="text-align: center;">
+                <div class="a-background" >
+                    <p><img src="img/banner003.jpg"></p>
+                </div>
+                <span class="swiper-text" >会展中心，促行业交流</span>
+            </div>
+        </div>
+        <div class="button">
+            <div class="swiper-button-prev swiper-button-white" id="prev1" style="left: 15%;opacity: 0.8;margin-top: -8px;"></div>
+            <div class="swiper-button-next swiper-button-white" id="next1" style="right: 15%;opacity: 0.8;margin-top: -8px;"></div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript">
+    window.onload = function() {
+        var swiper = new Swiper('.swiper-container',{
+            autoplay: false,
+            speed: 1000,
+            autoplayDisableOnInteraction: false,
+            loop: true,
+            centeredSlides: true,
+            slidesPerView: 2,
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            navigation: {
+                nextEl: '#next1',
+                prevEl: '#prev1',
+            },
+            onInit: function(swiper) {
+                alert('当前的slide序号是'+this.activeIndex);
+                swiper.slides[2].className = "swiper-slide swiper-slide-active";
+            },
+            breakpoints: {
+                668: {
+                    slidesPerView: 1,
+                }
+            }
+        });
+    }
+</script>
+
+    <div class="cp-title" style="background: #81d4fd; ">人才培养</div>
+    <div class="ty2" style="background: white;margin-top: 3em;margin-bottom: 3em;">
+        <div class="container ">
+            <div class="col-md-6 col-sm-6 col-xs-12" id="col-md-my1" style="padding-right: 5px;padding-left: 5px;overflow: hidden;position: relative;text-align: center;">
+                <img src="img/ren1.jpg" class="ren-img">
+                <div class="ren-text" id="rtext1"><span>员工晋升</span></div>
+                <div class="mask" id="mask1">
+                    <p class="mask-text-title">员工晋升</p><span class="mask-text">公司内部营造公平、公正、公开的竞争机制，<br>充分认可员工创造的价值。</span>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12" id="col-md-my2"style="padding-right: 5px;padding-left: 5px;overflow: hidden;position: relative;text-align: center;">
+                <img src="img/ren2.jpg" class="ren-img">
+                <div class="ren-text" id="rtext2"><span>校服设计大赛</span></div>
+                <div class="mask" id="mask2">
+                    <p class="mask-text-title">校服设计大赛</p><span class="mask-text">参与行业内顶尖赛事，提供展现自我的大舞台，<br>让你尽情发挥才能。</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3" id="col-md-my3"style="padding-right: 5px;padding-left: 5px;overflow: hidden;position: relative;text-align: center;">
+                <img src="img/ren3.jpg" class="ren-img">
+                <div class="ren-text" id="rtext3"><span>技能培训</span></div>
+                <div class="mask" id="mask3">
+                    <p class="mask-text-title">技能培训</p><span class="mask-text">公司集体出游，帮助员工<br>放宽身心、拓宽视野，增<br>加团队凝聚力。</span>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6" id="col-md-my4"style="padding-right: 5px;padding-left: 5px;overflow: hidden;position: relative;text-align: center;">
+                <img src="img/ren4.jpg" class="ren-img">
+                <div class="ren-text" id="rtext4"><span >培训拓展</span></div>
+                <div class="mask" id="mask4">
+                    <p class="mask-text-title">培训拓展</p><span class="mask-text">公司开展丰富多彩的拓展训练活动，助你激发<br>自身潜能，提高解决问题的能力。</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3" id="col-md-my5"style="padding-right: 5px;padding-left: 5px;overflow: hidden;position: relative;text-align: center;">
+                <img src="img/ren5.jpg" class="ren-img" >
+                <div class="ren-text" id="rtext5"><span>管培生学习</span></div>
+                <div class="mask" id="mask5">
+                    <p class="mask-text-title">管培生学习</p><span class="mask-text">公司高度重视从业人员<br>专业技能培训，激励员<br>工能力持续提升。</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+<script>
+    $(document).ready(function(){
+        $("#col-md-my1").mouseover(function () {
+            $("#mask1").css('display','flex');
+            $("#rtext1").hide();
+        });
+        $("#col-md-my1").mouseout(function () {
+            $("#mask1").hide();
+            $("#rtext1").show();
+        });
+    });
+    $(document).ready(function(){
+        $("#col-md-my2").mouseover(function () {
+            $("#mask2").css('display','flex');
+            $("#rtext2").hide();
+        });
+        $("#col-md-my2").mouseout(function () {
+            $("#mask2").hide();
+            $("#rtext2").show();
+        });
+    });
+    $(document).ready(function(){
+        $("#col-md-my3").mouseover(function () {
+            $("#mask3").css('display','flex');
+            $("#rtext3").hide();
+        });
+        $("#col-md-my3").mouseout(function () {
+            $("#mask3").hide();
+            $("#rtext3").show();
+        });
+    });
+    $(document).ready(function(){
+        $("#col-md-my4").mouseover(function () {
+            $("#mask4").css('display','flex');
+            $("#rtext4").hide();
+        });
+        $("#col-md-my4").mouseout(function () {
+            $("#mask4").hide();
+            $("#rtext4").show();
+        });
+    });
+    $(document).ready(function(){
+        $("#col-md-my5").mouseover(function () {
+            $("#mask5").css('display','flex');
+            $("#rtext5").hide();
+        });
+        $("#col-md-my5").mouseout(function () {
+            $("#mask5").hide();
+            $("#rtext5").show();
+        });
+    });
+</script>
+
+<div class="cp-title" style="background: #22a9eb">职业发展</div>
+<div>
+    <!--自己定义的收容轮播的区域-->
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!--轮播指标-->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1" ></li>
+                <li data-target="#myCarousel" data-slide-to="2" ></li>
+            </ol>
+            <!--轮播项目-->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="img/ren6.jpg" alt="图1"/>
+                </div>
+                <div class="item">
+                    <img src="img/ren7.jpg" alt="图2"/>
+                </div>
+                <div class="item">
+                    <img src="img/ren8.jpg" />
+                </div>
+            </div>
+            <!-- 轮播（Carousel）导航 -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+</div>
+
+<!--修改延迟事件：变快-->
+<script>
+    $(function(){
+        $('#myCarousel').carousel({interval:2000});
+    })
+</script>
+
+<!-- 代码 开始 -->
+<div id="leftsead" style="margin-top: 75px">
+    <ul>
+        <li>
+            <a href="javascript:void(0)" class="youhui" style="text-decoration:none">
+                <img src="../static/img/li2.png" width="47" height="49" class="shows" />
+                <img src="../static/img/ewm222.png" width="145" class="2wm" style="display:none;margin:-100px 57px 0 0" />
+            </a>
+        </li>
+        <li id="tel">
+            <a href="javascript:void(0)" style="text-decoration:none">
+                <div class="hides" style="width:250px;display:none;" id="tels">
+                    <div class="hides" id="p4">
+                        <img src="../static/img/li1.png">
+                    </div>
+                    <div class="hides" id="p3"><span style="color:#FFF;font-size:12px;" >服务热线：400-90-10086</span>
+                    </div>
+                </div>
+                <img src="../static/img/li1.png" width="47" height="49" class="shows" />
+            </a>
+        </li>
+        <li id="btn">
+            <a id="top_btn">
+                <!--<div class="hides" style="width:161px;display:none ;">-->
+                <!--<img src="../static/img/li3.png" width="47" height="49" />-->
+                <!--</div>-->
+                <img src="../static/img/li3.png" width="47" height="49"  />
+            </a>
+        </li>
+    </ul>
+</div>
+
+<script>
+
+    $(document).ready(function(){
+
+        $("#leftsead a").hover(function(){
+            if($(this).prop("className")=="youhui"){
+                $(this).children("img.hides").show();
+            }else{
+                $(this).children("div.hides").show();
+                $(this).children("img.shows").hide();
+                $(this).children("div.hides").animate({marginRight:'0px'},'0');
+            }
+        },function(){
+            if($(this).prop("className")=="youhui"){
+                $(this).children("img.hides").hide();
+            }else{
+                $(this).children("div.hides").animate({marginRight:'-163px'},0,function(){$(this).hide();$(this).next("img.shows").show();});
+            }
+        });
+
+        $("#top_btn").click(function(){if(scroll=="off") return;$("html,body").animate({scrollTop: 0}, 600);});
+
+        //右侧导航 - 二维码
+        $(".youhui").mouseover(function(){
+            $(this).children(".2wm").show();
+        })
+        $(".youhui").mouseout(function(){
+            $(this).children(".2wm").hide();
+        });
+
+
+    });
+
+
+</script>
+<!-- 代码 结束 -->
+
+
+
+</body>
+<!--页脚-->
+<div th:include="footer"></div>
+</html>

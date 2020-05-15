@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"><!--12服务器上要用GBK-->
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/head.css" />
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/mstyle.css">
+    <link rel="stylesheet" href="/static/css/reset.css" />
+    <link rel="stylesheet" href="/static/css/swiper.min.css" />
+
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>斯沃德教育科技股份有限公司</title>
+    <style>
+        .header{
+            background-color: #003399;
+        }
+        .newstitle{
+            margin-top: 19px;
+            margin-bottom: 23px;
+            font-size: 24px;
+            letter-spacing: 3px;
+        }
+        img{
+            max-width: 100%;
+            height: auto;
+        }
+        .firstCon{
+            height: auto;
+            position: relative;
+        }
+        .firstCon .container{
+            background-color: #FFFFFF;
+            margin-top: -150px;
+            position: relative;
+            /*bottom: 170px; 用这个会导致页面留空白。*/
+        }
+        #newscontext p{
+            line-height: 2.5rem;
+            letter-spacing: 0.1875rem;/*字体间距*/
+        }
+        .container{
+            width: 80%;
+        }
+        @media screen and (max-width:320px) {
+            .firstCon .container{
+                bottom: 0px;
+            }
+            #newscontext p{
+                line-height: 20px;
+                letter-spacing: 3px;/*字体间距*/
+                font-size: 16px;
+            }
+        }
+
+        @media screen and (max-width:768px) {
+            .firstCon .container{
+                margin-top: 0;
+            }
+            #newscontext p{
+                line-height: 20px;
+                letter-spacing: 3px;/*字体间距*/
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body style="background-color: rgb(242,242,242);">
+<!--页眉-->
+<div th:include="header :: comm-header"></div>
+<div><!--<p style="margin-bottom: 60px"></p>-->
+    <img src="/static/img/news.png" class="img-responsive">
+</div>
+<div class="firstCon">
+<div class="container" style="background-color: #fff">
+    <div class="col-lg-1"></div>
+
+    <div class="col-lg-10" style="background-color: #FFFFFF; padding: 0px;">
+        <div class="col-lg-2"></div>
+
+        <div class="col-lg-8" style="text-align: center;">
+            <h4 class="newstitle" id="nTitle" th:text="${news.articletitle}"></h4>
+            <span style="font-size: 16px;" id="nTime" th:text="${#dates.format(news.createtime,'yyyy-MM-dd')}"></span>
+        </div>
+
+        <div class="col-lg-2"></div>
+        <div class="col-lg-12" style="border-bottom: solid 1px silver;"></div>
+
+        <div class="col-lg-12" id="newscontext"></div>
+    </div>
+
+    <div class="col-lg-1"></div>
+</div>
+</div>
+    <div style="margin:0 20px"></div>
+<input th:value="${news.articleid}" type="hidden" id="newsid"/>
+<!--页脚-->
+<div th:include="footer :: comm-footer"></div>
+
+<script src="/static/js/swiper.min.js"></script>
+<script src="/static/js/loadPublicInfo.js"></script>
+<script>
+    $(document).ready(function () {
+        var id = $("#newsid").val();
+        $.get("/article/"+id,function (data) {
+            $("#newscontext").append(data.articlecontext);
+            $("#nTitle").text(data.articletitle)
+            $("#nTime").text(data.createtime);
+        })
+    })
+    $(function(){
+        //超过一定高度导航添加类名
+        var nav=$("header"); //得到导航对象
+        var win=$(window); //得到窗口对象
+        var sc=$(document);//得到document文档对象。
+        win.scroll(function(){
+            if(sc.scrollTop()>=100){
+                nav.addClass("on");
+            }else{
+                nav.removeClass("on");
+            }
+        })
+
+        //移动端展开nav
+        $('#navToggle').on('click',function(){
+            $('.m_nav').addClass('open');
+        })
+        //关闭nav
+        $('.m_nav .top .closed').on('click',function(){
+            $('.m_nav').removeClass('open');
+        })
+
+        //二级导航  移动端
+        $(".m_nav .ul li").click(function() {
+            $(this).children("div.dropdown_menu").slideToggle('slow')
+            $(this).siblings('li').children('.dropdown_menu').slideUp('slow');
+        });
+
+    })
+</script>
+<script>
+    var mySwiper2 = new Swiper ('.swiper-container2', {
+        loop: true, // 循环模式选项
+        // 如果需要分页器
+        pagination: {
+            el: '.swiper-pagination2',
+        },
+        autoplay:true,
+        speed:1000,
+    })
+</script>
+</body>
+</html>

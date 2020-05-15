@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>斯沃德教育科技股份有限公司</title>
+</head>
+<body>
+<div th:fragment="comm-footer" >
+<div class="footer" style="position:relative;margin-top: 50px">
+    <div class="container">
+        <div class="col-lg-6 footerL">
+            <p class="footerlogo" style="margin-left: -47px">
+                <img src="../static/image/logo_new1.png">
+            </p>
+            <p class="address">
+                营销中心：<span id="publicaddress" class="address"></span><!--我太难了 span标签的赋值方法：span.html（"赋值"）。取值用 .text()-->
+            </p>
+            <p class="address">
+                公司厂址：<span id="publicfactoryaddress" class="address"></span>
+            </p>
+            <p class="hotline">
+                全国统一服务热线：<span id="publictelephone" class="hotline"></span>
+
+            </p>
+        </div>
+        <div class="col-lg-4 footerM">
+            <p class="footlink">
+                <a style="text-decoration : none" href="/index">斯沃德首页</a>  <a style="text-decoration : none" href="/about">关于我们 </a> <a style="text-decoration : none" href="/productlist"> 产品体验  </a> <a style="text-decoration : none" href="/cooperation">合作共赢 </a>
+                <a style="text-decoration : none" href="/newsIndex/">新闻资讯 </a> <a style="text-decoration : none" href="/onlineService"> 在线服务</a>
+            </p>
+            <p class="beianhao">
+                备案号：赣ICP备17008157号
+            </p>
+        </div>
+        <div class="col-lg-2 footewm">
+            <img src="/static/img/ewm2.png">
+            <p style="text-align:center">斯沃德校服</p>
+        </div>
+    </div>
+</div>
+</div>
+<script src="/static/js/swiper.min.js"></script>
+<script src="/static/js/loadPublicInfo.js"></script>
+<script>
+    $(function(){
+        //超过一定高度导航添加类名
+        var nav=$("header"); //得到导航对象
+        var win=$(window); //得到窗口对象
+        var sc=$(document);//得到document文档对象。
+        win.scroll(function(){
+            if(sc.scrollTop()>=100){
+                nav.addClass("on");
+            }else{
+                nav.removeClass("on");
+            }
+        })
+
+        //移动端展开nav
+        $('#navToggle').on('click',function(){
+            $('.m_nav').addClass('open');
+        })
+        //关闭nav
+        $('.m_nav .top .closed').on('click',function(){
+            $('.m_nav').removeClass('open');
+        })
+
+        //二级导航  移动端
+        $(".m_nav .ul li").click(function() {
+            $(this).children("div.dropdown_menu").slideToggle('slow')
+            $(this).siblings('li').children('.dropdown_menu').slideUp('slow');
+        });
+
+    })
+</script>
+<script>
+    var mySwiper2 = new Swiper ('.swiper-container2', {
+        loop: true, // 循环模式选项
+        // 如果需要分页器
+        pagination: {
+            el: '.swiper-pagination2',
+        },
+        autoplay:true,
+        speed:10000,
+
+
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,376 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>斯沃德教育科技股份有限公司</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1 user-scalable=no">
+	<link rel="stylesheet" href="../static/css/reset.css" />
+	<link rel="stylesheet" href="../static/css/swiper.min.css" />
+	<link rel="stylesheet" href="../static/css/bootstrap.css">
+	<link rel="stylesheet" href="../static/css/head.css" />
+	<link rel="stylesheet" href="../static/css/style.css">
+	<link rel="stylesheet" href="../static/css/mstyle.css">
+	<link rel="stylesheet" href="../static/css/zzsc.css">
+<link href="../static/css/demo.css" rel="stylesheet" type="text/css">
+<link href="../static/css/mdemo.css" rel="stylesheet" type="text/css">
+<script src="/static/js/jquery.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script type="text/javascript" 	src="/static/js/jquery.smint.js"></script>
+	<script src="/static/js/swiper.min.js"></script>
+</head>
+<body>
+<!--页眉-->
+<div th:include="header::comm-header"></div>
+
+<!-- 代码 开始 -->
+<div id="leftsead" style="margin-top: 75px">
+	<ul>
+		<li>
+			<a href="javascript:void(0)" class="youhui" style="text-decoration:none">
+				<img src="../static/img/li2.png" width="47" height="49" class="shows" />
+				<img src="../static/img/ewm222.png" width="145" class="2wm" style="display:none;margin:-100px 57px 0 0" />
+			</a>
+		</li>
+		<li id="tel">
+			<a href="javascript:void(0)" style="text-decoration:none">
+				<div class="hides" style="width:250px;display:none;" id="tels">
+					<div class="hides" id="p4">
+						<img src="../static/img/li1.png">
+					</div>
+					<div class="hides" id="p3"><span style="color:#FFF;font-size:12px;" >服务热线：400-90-10086</span>
+					</div>
+				</div>
+				<img src="../static/img/li1.png" width="47" height="49" class="shows" />
+			</a>
+		</li>
+		<li id="btn">
+			<a id="top_btn">
+				<!--<div class="hides" style="width:161px;display:none ;">-->
+				<!--<img src="../static/img/li3.png" width="47" height="49" />-->
+				<!--</div>-->
+				<img src="../static/img/li3.png" width="47" height="49"  />
+			</a>
+		</li>
+	</ul>
+</div>
+
+<script>
+
+    $(document).ready(function(){
+
+        $("#leftsead a").hover(function(){
+            if($(this).prop("className")=="youhui"){
+                $(this).children("img.hides").show();
+            }else{
+                $(this).children("div.hides").show();
+                $(this).children("img.shows").hide();
+                $(this).children("div.hides").animate({marginRight:'0px'},'0');
+            }
+        },function(){
+            if($(this).prop("className")=="youhui"){
+                $(this).children("img.hides").hide();
+            }else{
+                $(this).children("div.hides").animate({marginRight:'-163px'},0,function(){$(this).hide();$(this).next("img.shows").show();});
+            }
+        });
+
+        $("#top_btn").click(function(){if(scroll=="off") return;$("html,body").animate({scrollTop: 0}, 600);});
+
+        //右侧导航 - 二维码
+        $(".youhui").mouseover(function(){
+            $(this).children(".2wm").show();
+        })
+        $(".youhui").mouseout(function(){
+            $(this).children(".2wm").hide();
+        });
+
+
+    });
+
+
+</script>
+<!-- 代码 结束 -->
+
+<div class="wrap">
+	<div class="section sTop">
+		<div class="banner">
+			<img src="../static/img/aboutbanner.png">
+		</div>
+		<Div class="container intro about">
+			<div class="col-lg-6 introR">
+				<img src="../static/img/about2.png">
+			</div>
+			<div class="col-lg-6 introL ">
+				<h2 style="text-align:center">
+					<b style="margin-left:-70px;">关于斯沃德</b>
+				</h2>
+				<p style="margin: 0 80px 25px 0px">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;斯沃德教育科技股份有限公司，精准定位于校园服饰产品，致力于打造全国校服行业第一品牌。
+				</p>
+				<p style="margin: 0 80px 25px 0px">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;斯沃德拥有校服行业最高学历核心经营团队，决心成为管理标准化，生产智能化，运营数据化，经营平台化的校服产业界航母。
+				</p>
+				<p style="margin: 0 80px 25px 0px">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;斯沃德正着力打造全国最大的学生装智能制造基地--占地约600亩，建筑面积30余万平方米，集成了行业最先进的技术装备、信息系统，将为公司再次腾飞、名列全球最强校服企业前茅奠定基础。
+				</p>
+			</div>
+		</Div>
+	</div>
+	<div class="subMenu" >
+		<div class="inner">
+			<a href="#" id="s1" class="subNavBtn" style="text-decoration : none">
+				<p>
+					<img src="../static/img/wenhua.png">
+				</p>
+				<p>斯沃德文化</p>
+			</a>
+			<a href="#" id="s3" class="subNavBtn" style="text-decoration : none">
+				<p>
+					<img src="../static/img/rongyu.png">
+				</p>
+				<p>斯沃德荣誉</p>
+			</a>
+			<a href="#" id="s4" class="subNavBtn" style="text-decoration : none">
+				<p>
+					<img src="../static/img/youshi.png">
+				</p>
+				<p>斯沃德优势</p>
+			</a>
+		</div>
+	</div>
+	<div class="section s1">
+		<img src="../static/img/qiyewenhua2.jpg">
+	</div>
+	<div class="section s3" style="background: 	#F5F5F5">
+		<div class="abouttit">
+			<p>斯沃德荣誉</p>
+		</div>
+		<div class="banner">
+			<div class="swiper-container2">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+
+						<div class="container">
+							<div class="col-lg-4">
+								<a style="text-decoration : none">
+									<p>
+										<img src="../static/img/ronyu13.jpg">
+									</p>
+									<p style="font-size: 15px;color: black">
+										首批全国校服知名品牌
+									</p>
+								</a>
+
+							</div>
+							<div class="col-lg-4">
+								<a style="text-decoration : none">
+									<p>
+										<img src="../static/img/ronyu14.jpg">
+									</p>
+									<p style="font-size: 15px;color: black">
+										首批全国校服知名品牌
+									</p>
+								</a>
+
+							</div>
+							<div class="col-lg-4">
+								<a style="text-decoration : none">
+									<p>
+										<img src="../static/img/ronyu15.jpg">
+									</p>
+									<p style="font-size: 15px;color: black">
+										首批全国校服知名品牌
+									</p>
+								</a>
+
+							</div>
+
+						</div>
+					</div>
+					<div class="swiper-slide">
+
+						<div class="container">
+							<div class="col-lg-4">
+								<a style="text-decoration : none">
+									<p>
+										<img src="../static/img/ronyu16.jpg">
+									</p>
+									<p style="font-size: 15px;color: black">
+										首批全国校服知名品牌
+									</p>
+								</a>
+
+							</div>
+							<div class="col-lg-4">
+								<a style="text-decoration : none">
+									<p>
+										<img src="../static/img/ronyu17.jpg">
+									</p>
+									<p style="font-size: 15px;color: black">
+										首批全国校服知名品牌
+									</p>
+								</a>
+
+							</div>
+							<div class="col-lg-4" style="text-decoration : none">
+								<a style="text-decoration : none">
+									<p>
+										<img src="../static/img/ronyu18.jpg">
+									</p>
+									<p style="font-size: 15px;color: black">
+										首批全国校服知名品牌
+									</p>
+								</a>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<!-- 如果需要分页器 -->
+				<div class="swiper-pagination2"></div>
+			</div>
+		</div>
+
+
+
+	</div>
+	<div class="section s4">
+		<div class="abouttit">
+			<p>斯沃德优势</p>
+		</div>
+		<div class="container ys">
+			<div class="col-lg-6">
+				<div class="col-xs-1 ysnum">
+					1
+				</div>
+				<div class="col-xs-11">
+					<p class="yst1">人才优势</p>
+					<p class="yst2">
+						行业先驱引领的专业团队
+					</p>
+					<p class="yst3">
+						斯沃德拥有各类技术人员500余名，在品牌创始人及行业内先驱专家的带领和培育下，公司形成了一支专业带头人引领、技术骨干主导、结构合理、技术过硬、团结互助、砥砺创新的专业团队，使斯沃德迅速成长为我国校服生产行业的优秀企业。
+					</p>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<img src="../static/img/youshi11.jpg">
+			</div>
+		</div>
+		<div class="container ys">
+			<div class="col-lg-6">
+				<div class="col-xs-1 ysnum">
+					2
+				</div>
+				<div class="col-xs-11">
+					<p class="yst1">研发优势</p>
+					<p class="yst2">
+						专业技术一流的设计师队伍
+					</p>
+					<p class="yst3">
+						斯沃德于成立之初便设立研发设计部门，组建了国内专业技术一流的设计师队伍，并不断探索国内外校企合作的研发模式。目前公司在研发设计上投入大量资金，每年研发校服1000余款，立足全国学生装文化产品设计领域制高点。						</p>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<img src="../static/img/youshi12.jpg">
+			</div>
+		</div>
+		<div class="container ys">
+			<div class="col-lg-6">
+				<div class="col-xs-1 ysnum">
+					3
+				</div>
+				<div class="col-xs-11">
+					<p class="yst1">采购优势</p>
+					<p class="yst2">
+						从源头保证校服安全和质量
+					</p>
+					<p class="yst3">
+						斯沃德建立严格的供应商准入系统，从生产源头上保证了校服的基本安全和质量，构筑了中小学生校服质量的安全防线，大幅提高了校服的安全质量要求。					</div>
+
+			</div>
+			<div class="col-lg-6">
+				<img src="../static/img/youshi13.jpg">
+			</div>
+		</div>
+		<div class="container ys">
+			<div class="col-lg-6">
+				<div class="col-xs-1 ysnum">
+					4
+				</div>
+				<div class="col-xs-11">
+					<p class="yst1">生产优势</p>
+					<p class="yst2">
+						智能生产、全品质检
+					</p>
+					<p class="yst3">
+						斯沃德正全面建设全生产链智能制造基地，引入互联网、物联网、大数据技术和产业最新设备，行业内率先实现信息化、智能化“双化融合”。通过智能制造系统对数据的收集及设备的改造、改良，形成一套全新的服装制造的智能化标准，如3D量体等，实现版型细分、效益提高，更能满足消费者的需求。
+					</p>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<img src="../static/img/youshi14.jpg">
+			</div>
+		</div>
+
+
+		<div class="container ys">
+			<div class="col-lg-6">
+				<div class="col-xs-1 ysnum">
+					5
+				</div>
+				<div class="col-xs-11">
+					<p class="yst1">销售优势</p>
+					<p class="yst2">
+						互联网+校服，配送更高效
+					</p>
+					<p class="yst3">
+						斯沃德搭建了全面的互联网服务平台，在业内率先完成互联网+校服资源整合，旗下智慧校服云平台“校服小助手”，极大简化了尺码收集和校服发放的繁杂工作流程，使得产品配送更高效精准，提升客户体验。						</p>
+
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<img src="../static/img/youshi15.jpg">
+			</div>
+		</div>
+
+		<div class="container ys">
+			<div class="col-lg-6">
+				<div class="col-xs-1 ysnum">
+					6
+				</div>
+				<div class="col-xs-11">
+					<p class="yst1">服务优势</p>
+					<p class="yst2">
+						校服一站式全方位服务
+					</p>
+					<p class="yst3">
+						斯沃德充分满足客户需求，在售前、售中、售后各环节为客户提供细致、周到的服务，从款式设计到样衣确认，从线上订购到生产质检，从校服分配到售后答疑，斯沃德始终践行优质服务，力求客户满意。					</div>
+			</div>
+
+			<div class="col-lg-6">
+				<img src="../static/img/youshi16.jpg">
+			</div>
+		</div>
+
+	</div>
+</div>
+<!--页脚-->
+<div th:include="footer"></div>
+
+<script type="text/javascript">
+    $(document).ready( function() {
+
+        $('.subMenu').smint({
+
+            'scrollSpeed' : 1000
+
+        });
+
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>斯沃德教育科技股份有限公司</title>
+    <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+    <meta name="author" content="Vincent Garreau" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" media="screen" href="../static/css/login.css">
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        function login(){
+            var loginname = $.trim($("#loginname").val() );
+            var password = $.trim($("#password").val()  );
+            //ajax去服务器端校验
+            var data= {loginname:loginname,password:password};
+
+            $.ajax({
+                type:"POST",
+                url:"/manage/login",
+                data:JSON.stringify(data),
+                dataType:'json',
+                contentType:"application/json",
+
+
+                success:function(result,status){
+                    //alert(msg);
+                    if(status == "success"){
+                        location.href="/manage/index"
+                    }else{
+                        alert("登录失败，请重试!");
+                    }
+                },
+                error:function(result,msg){
+                    alert("登陆失败，请检查用户名或者密码"+msg);
+                },
+            });
+        }
+
+    </script>
+
+</head>
+<body>
+    <!-- particles.js container -->
+    <div id="particles-js" style="display: flex;align-items: center;justify-content: center">
+    </div>
+    <div class="login-page" id="loginApp">
+        <div class="login-content" id="loginForm">
+            <div class="login-tit">登录</div>
+            <div class="login-input">
+                <input type="text" placeholder="用户名/手机号" id="loginname">
+            </div>
+            <div class="login-input">
+                <input type="password" placeholder="密码" id="password">
+            </div>
+            <div class="login-btn">
+                <div class="login-btn-left" id="btn_sub">
+                    <button onclick="login()">登录</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- scripts -->
+    <script src="/static/js/particles.js"></script>
+    <script src="/static/js/app.js"></script>
+    <script>
+        function changeImg() {
+            let pic = document.getElementById('picture');
+            console.log(pic.src)
+            if (pic.getAttribute("src", 2) == "img/check.png") {
+                pic.src = "../static/img/checked.png"
+            } else {
+                pic.src = "../static/img/check.png"
+            }
+        }
+    </script>
+
+</body>
+</html>

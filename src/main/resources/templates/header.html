@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>斯沃德教育科技股份有限公司</title>
+    <link rel="stylesheet" href="/static/css/reset.css" />
+    <link rel="stylesheet" href="/static/css/swiper.min.css" />
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/head.css" />
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/mstyle.css">
+
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!-- 导航 -->
+<div th:fragment="comm-header">
+<header class="header">
+    <div class="container clearfix">
+        <div class="fl left">
+            <a href="/" ><img src="/static/image/logo_new1.png" alt="" class="img1" /></a>
+            <a href="/" ><img src="/static/image/logo_new1.png" alt="" class="img2" /></a>
+        </div>
+        <div class="fr nav">
+            <ul class="navbar_nav" data-in="fadeInDown" data-out="fadeOutUp">
+                <li class="active">
+                    <a href="/index">斯沃德首页</a>
+                </li>
+
+                <li class="dropdown">
+                    <a href="/about">关于我们</a>
+                    <div class="dropdown_menu">
+                        <a href="/about">企业介绍</a>
+                        <a href="/human">加入我们</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a href="/productlist">产品体验</a>
+                    <div class="dropdown_menu">
+                        <a href="/productlist">产品画册</a>
+                        <a href="/zhihui">智慧校服</a>
+                    </div>
+                </li>
+
+                <li class="dropdown">
+                    <a>合作共赢</a>
+                    <div class="dropdown_menu">
+                        <a href="/cooperation">合作共赢</a>
+                        <a href="/case">合作案例</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="/newsIndex">新闻资讯</a>
+                    <div class="dropdown_menu">
+                        <a href="/newsIndex">新闻首页</a>
+                        <a href="/newsList/1">品牌动态</a>
+                        <!--<a href="publicWelfare">公益资讯</a>
+                        <a href="culture">校服文化</a>-->
+                    </div>
+                </li>
+                <li>
+                    <a href="/onlineService">在线服务</a>
+                </li>
+            </ul>
+        </div>
+        <a href="javascript:void(0)" id="navToggle">
+            <span></span>
+        </a>
+    </div>
+</header>
+<!--移动端的导航-->
+<div class="m_nav">
+    <div class="top clearfix">
+        <img src="/static/image/closed.png" alt="" class="closed" />
+    </div>
+    <div class="logo">
+        <a href="index"><img src="/static/image/logo2.jpg" alt="" /></a>
+    </div>
+    <ul class="ul" data-in="fadeInDown" data-out="fadeOutUp">
+        <li class="active">
+            <a href="/index">斯沃德首页</a>
+        </li>
+        <li class="dropdown">
+            <a >
+                关于我们
+            </a>
+            <div class="dropdown_menu">
+                <a href="/about">企业介绍</a>
+                <a href="/human">加入我们</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a>产品体验</a>
+            <div class="dropdown_menu">
+                <a href="/productlist">产品画册</a>
+                <a href="/zhihui">智慧校服</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a>合作共赢</a>
+            <div class="dropdown_menu">
+                <a href="/cooperation">合作共赢</a>
+                <a href="/case">合作案例</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a>新闻资讯</a>
+            <div class="dropdown_menu">
+                <a href="/newsIndex">新闻首页</a>
+                <a href="/newsList">品牌动态</a>
+                <!--<a href="publicWelfare">公益资讯</a>
+                <a href="culture">校服文化</a>-->
+            </div>
+        </li>
+        <li>
+            <a href="/onlineService">在线服务</a>
+        </li>
+    </ul>
+</div>
+</div>
+
+
+</body>
+</html>

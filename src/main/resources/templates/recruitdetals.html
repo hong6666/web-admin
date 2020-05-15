@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>斯沃德教育科技股份有限公司</title>
+    <link rel="stylesheet" href="/static/css/reset.css" />
+    <link rel="stylesheet" href="/static/css/swiper.min.css" />
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/head.css" />
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/mstyle.css">
+    <link rel="stylesheet" href="css/recruit.css">
+    <link rel='stylesheet' href='//img.ifchange.com/toc/custom/base/dist/css/common.0dde919a.css'>
+    <link rel='stylesheet' href='//img.ifchange.com/toc/custom/base/dist/css/position/detail.71d3f6b2.css'>
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <title></title>
+
+    <style>
+        .myspan{
+            font-size: 15px;
+        }
+    </style>
+<!-- 导航 -->
+    <!--页眉-->
+    <div th:include="header"></div>
+<!--页面上面一个图片-->
+
+
+<!--图片和文字-->
+<div class='page page-detail' style="background: white">
+    <div class='position-head' style="background-color: #deeefd">
+        <div class='container' style="padding-top: 100px;">
+            <div class='position-item'>
+                <div class='position-name clearfix'>
+                    <span class='name nowrap' th:text="${position.positionname}" style="font-size: 26px;font-weight:bold;">产品经理实习生</span>
+                </div>
+                <div class='btn-group'></div>
+                <div class='position-info clearfix'>
+                     <span class='city nowrap'>
+                         <i class='icon-address' style="color: black;"></i>
+                        <!-- <span class="myspan" th:text="${position.workplace}">南昌市</span>-->
+                         <span class="myspan"  th:if="${position.workplace}==1">南昌</span>
+                        <span class="myspan"  th:if="${position.workplace}==2">鄱阳</span>
+                     </span>
+                    <span class='city nowrap'>&nbsp;|</span>
+                    <span th:text="${position.xueli}" class='city nowrap myspan'></span>
+                    <span class='city nowrap'>&nbsp;|</span>
+                    <span th:text="${position.positionmajor}" class='city nowrap myspan'></span>
+                    <span class='city nowrap'>&nbsp;|</span>
+                    <span th:text="${position.numbers} " class='city nowrap myspan'></span>
+                    <span class='city nowrap'>人</span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='info'>
+        <div class='info-left'>
+            <div class='position-desc' style="margin-top: 45px;">
+                <h4 style="font-size:18px;font-weight:bold;"><i class='icon-claim'></i>职位描述</h4>
+                <pre th:text="${position.positionduty}" style="all:initial;display:block;white-space:pre-line;font-size:16px;line-height: 35px;">要输出的文本</pre>
+            </div>
+            <div class='position-desc' style="margin-top: 45px;">
+                <h4 style="font-size:18px;font-weight:bold;"><i class='icon-description'></i>职位要求</h4>
+                <pre th:text="${position.qualification}" style="all:initial;display:block;white-space:pre-line;font-size:16px;line-height: 35px; ">要输出的文本</pre>
+            </div>
+            <div class='position-desc' style="margin-top: 45px;">
+                <h4 style="font-size:18px;font-weight:bold;"><i class='icon-claim'></i>工作地点</h4>
+                <p th:if="${position.workplace}==1" style="font-size:16px;line-height: 35px;">南昌</p>
+                <p th:if="${position.workplace}==2" style="font-size:16px;line-height: 35px;">鄱阳</p>
+            </div>
+            <div class='position-desc' style="margin-top: 45px;">
+                <h4 style="font-size:18px;font-weight:bold;"><i class='icon-claim'></i>联系方式</h4>
+                <p style="font-size:16px;line-height: 35px;">联系电话：0791-88531692 18000713336（微信同号）<br />
+                 联系人：胡女士/文先生<br />
+                 电子邮箱：siwodhr@swdxf.com
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+    <!--页脚-->
+    <div th:include="footer"></div>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/jquerypage/css/zxf_page.css"/>
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <table class="table table-bordered">
+        <h3>岗位栏目
+           <a href="/manage/addPositionColumn"><button class="btn btn-primary " >添加栏目</button></a>
+        </h3>
+        <thead>
+        <tr>
+            <th>编号</th>
+            <th>名称</th>
+            <th>状态</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="positionColumn:${pageInfo.list}">
+            <td th:text="${positionColumn.columnid}">编号</td>
+            <td th:text="${positionColumn.columnname}">名称</td>
+            <td>
+                <div th:switch="${positionColumn.state}">
+                    <p th:case="1">创建</p>
+                    <p th:case="2">发布</p>
+                </div>
+            </td>
+            <td> <a th:href="'/manage/updatePositionColumn/'+${positionColumn.columnid}"><button type="button" class="btn btn-primary">修改</button></a></td>
+        </tr>
+
+        </tbody>
+    </table>
+    <div class="col-lg-12">
+        <div class="zxf_pagediv"></div>
+    </div>
+</div>
+
+<script th:inline="javascript">
+    var pagenum = [[${pageInfo.total}]];
+    var curr = [[${pageInfo.pageNum}]];
+    var prePage = [[${pageInfo.prePage}]];
+    var nextPage = [[${pageInfo.nextPage}]];
+    var pages = [[${pageInfo.pages}]];
+    (function($){
+        var zp = {
+            init:function(obj,pageinit){
+                return (function(){
+                    zp.addhtml(obj,pageinit);
+                    zp.bindEvent(obj,pageinit);
+                }());
+            },
+            addhtml:function(obj,pageinit){
+                return (function(){
+                    obj.empty();
+                    /*上一页*/
+                    if (pageinit.current > 1) {
+                        obj.append('<a href="/manage/positionColumn/'+ prePage +'" class="prebtn">上一页</a>');
+                    } else{
+                        obj.remove('.prevPage');
+                        obj.append('<span class="disabled">上一页</span>');
+                    }
+                    /*中间页*/
+                    if (pageinit.current >4 && pageinit.pageNum > 4) {
+                        obj.append('<a href="javascript:;" class="zxfPagenum">'+1+'</a>');
+                        obj.append('<a href="javascript:;" class="zxfPagenum">'+2+'</a>');
+                        obj.append('<span>...</span>');
+                    }
+                    if (pageinit.current >4 && pageinit.current <= pageinit.pageNum-5) {
+                        var start  = pageinit.current - 2,end = pageinit.current + 2;
+                    }else if(pageinit.current >4 && pageinit.current > pageinit.pageNum-5){
+                        var start  = pageinit.pageNum - 4,end = pageinit.pageNum;
+                    }else{
+                        var start = [[${pageInfo.pageNum}]],end = [[${pageInfo.pages}]];
+                    }
+                    for (;start <= end;start++) {
+                        if (start <= pageinit.pageNum && start >=1) {
+                            if (start == pageinit.current) {
+                                obj.append('<span class="current">'+ start +'</span>');
+                            } else if(start == pageinit.current+1){
+                                obj.append('<a href="/manage/positionColumn/'+ start +'" class="zxfPagenum nextpage">'+ start +'</a>');
+                            }else{
+                                obj.append('<a href="/manage/positionColumn/'+ start +'" class="zxfPagenum">'+ start +'</a>');
+                            }
+                        }
+                    }
+                    if (end < pageinit.pageNum) {
+                        obj.append('<span>...</span>');
+                    }
+                    /*下一页*/
+                    if (pageinit.current >= pageinit.pageNum) {
+                        obj.remove('.nextbtn');
+                        obj.append('<span class="disabled">下一页</span>');
+                    } else{
+                        obj.append('<a href="/manage/positionColumn/'+ nextPage +'" class="nextbtn">下一页</a>');
+                    }
+                    /*尾部*/
+                    obj.append('<span>'+'共'+'<b>'+pageinit.pageNum+'</b>'+'页，'+'</span>');
+                    obj.append('<span>'+'到第'+'<input type="number" class="zxfinput" style="width: 45px;height: 25px;" value=""/>'+'页'+'</span>');
+                    obj.append('<span class="zxfokbtn">'+'确定'+'</span>');
+                }());
+            },
+            bindEvent:function(obj,pageinit){
+                return (function(){
+                    obj.on("click","a.prebtn",function(){
+                        var cur = parseInt(obj.children("span.current").text());
+                        var current = $.extend(pageinit, {"current":cur-1});
+                        zp.addhtml(obj,current);
+                        if (typeof(pageinit.backfun)=="function") {
+                            pageinit.backfun(current);
+                        }
+                    });
+                    obj.on("click","a.zxfPagenum",function(){
+                        var cur = parseInt($(this).text());
+                        var current = $.extend(pageinit, {"current":cur});
+                        zp.addhtml(obj,current);
+                        if (typeof(pageinit.backfun)=="function") {
+                            pageinit.backfun(current);
+                        }
+                    });
+                    obj.on("click","a.nextbtn",function(){
+                        var cur = parseInt(obj.children("span.current").text());
+                        var current = $.extend(pageinit, {"current":cur+1});
+                        zp.addhtml(obj,current);
+                        if (typeof(pageinit.backfun)=="function") {
+                            pageinit.backfun(current);
+                        }
+                    });
+                    obj.on("click","span.zxfokbtn",function(){
+                        var cur = parseInt($("input.zxfinput").val());
+                        /*var current = $.extend(pageinit, {"current":cur});
+                        zp.addhtml(obj,{"current":cur,"pageNum":pageinit.pageNum});
+                        if (typeof(pageinit.backfun)=="function") {
+                            pageinit.backfun(current);
+                        }*/
+                        location.href="/manage/positionColumn/"+cur;
+                    });
+                }());
+            }
+        }
+        $.fn.createPage = function(options){
+            var pageinit = $.extend({
+                pageNum : pages,
+                current : curr,
+                backfun : function(){}
+            },options);
+            zp.init(this,pageinit);
+        }
+    }(jQuery));
+    /*<![CDATA[*/
+
+    $(".zxf_pagediv").createPage({
+        pageNum: pages,
+        current: curr,
+        backfun: function(e) {
+            //console.log(e);//回调
+        }
+    });
+    /*]]>*/
+</script>
+
+</body>
+
+<script type="text/javascript">
+    function positionSubmit(){
+        document.getElementById("positionForm").submit();//表单提交
+    }
+</script>
+</html>

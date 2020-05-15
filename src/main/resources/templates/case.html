@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="/static/css/zzsc.css">
+<head>
+	<meta charset="UTF-8" />
+	<title>斯沃德教育科技股份有限公司</title>
+</head>
+<body>
+<!--页眉-->
+<div th:include="header"></div>
+
+<!-- 代码 开始 -->
+<div id="leftsead" style="margin-top: 75px">
+	<ul>
+		<li>
+			<a href="javascript:void(0)" class="youhui" style="text-decoration:none">
+				<img src="../static/img/li2.png" width="47" height="49" class="shows" />
+				<img src="../static/img/ewm222.png" width="145" class="2wm" style="display:none;margin:-100px 57px 0 0" />
+			</a>
+		</li>
+		<li id="tel">
+			<a href="javascript:void(0)" style="text-decoration:none">
+				<div class="hides" style="width:250px;display:none;" id="tels">
+					<div class="hides" id="p4">
+						<img src="../static/img/li1.png">
+					</div>
+					<div class="hides" id="p3"><span style="color:#FFF;font-size:12px;" >服务热线：400-90-10086</span>
+					</div>
+				</div>
+				<img src="../static/img/li1.png" width="47" height="49" class="shows" />
+			</a>
+		</li>
+		<li id="btn">
+			<a id="top_btn">
+				<!--<div class="hides" style="width:161px;display:none ;">-->
+				<!--<img src="../static/img/li3.png" width="47" height="49" />-->
+				<!--</div>-->
+				<img src="../static/img/li3.png" width="47" height="49"  />
+			</a>
+		</li>
+	</ul>
+</div>
+
+<script>
+
+    $(document).ready(function(){
+
+        $("#leftsead a").hover(function(){
+            if($(this).prop("className")=="youhui"){
+                $(this).children("img.hides").show();
+            }else{
+                $(this).children("div.hides").show();
+                $(this).children("img.shows").hide();
+                $(this).children("div.hides").animate({marginRight:'0px'},'0');
+            }
+        },function(){
+            if($(this).prop("className")=="youhui"){
+                $(this).children("img.hides").hide();
+            }else{
+                $(this).children("div.hides").animate({marginRight:'-163px'},0,function(){$(this).hide();$(this).next("img.shows").show();});
+            }
+        });
+
+        $("#top_btn").click(function(){if(scroll=="off") return;$("html,body").animate({scrollTop: 0}, 600);});
+
+        //右侧导航 - 二维码
+        $(".youhui").mouseover(function(){
+            $(this).children(".2wm").show();
+        })
+        $(".youhui").mouseout(function(){
+            $(this).children(".2wm").hide();
+        });
+
+
+    });
+
+
+</script>
+<!-- 代码 结束 -->
+
+<div class="banner">
+	<img src="/static/img/banner05.jpg">
+</div>
+
+
+	<p class="casetit">
+		斯沃德 • 重点合作客户
+	</p>
+<div class="container case" style="margin-bottom:60px">
+	<div class="caseL">
+		<p class="schoolname">
+			<span><img src="../static/img/scoollogo.png"></span>
+			<span>南昌师范附属实验小学教育集团</span>
+		</p>
+		<p class="schoolintro">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;历时13个月的倾情打磨，是南师附小校服出世前无声的孕育。“描绘精彩画面，发展多元志趣，追求积极人生！”南师附小的办学理念，不仅浸润着莘莘学子，也悄然渗入服饰设计；我们可爱的吉祥物——“星星火炬娃”，以及南师附小校徽五色红、橙、蓝、白、绿，全部融入到南师附小的新式校服，代表了南师附小人的“多元志趣”和人生的“精彩画面”。
+		</p>
+	</div>
+	<div class="caseR">
+		<img src="../static/img/2V4A9867.png">
+	</div>
+</div>
+<div class="container case" style="margin-bottom:60px">
+	<div class="caseL">
+		<p class="schoolname">
+			<span><img src="../static/img/scoollogo02.png"></span>
+			<span>南昌市松柏小学</span>
+		</p>
+		<p class="schoolintro">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;该系列校服设计灵感来源于参天古松。色调及设计上，以不同层次感的绿色，结合格纹、条纹、拼接等工艺展现各季校服特点，整个系列简约和谐又不显单调。绿色是人体视觉最适应的颜色。青松系列给人以温和、舒适又充满活力的印象，象征着当代学子知书达理、信念坚定、对美好的未来充满信心。
+		</p>
+	</div>
+	<div class="caseR">
+		<img src="../static/img/imm2.png">
+	</div>
+</div>
+<div class="container case" style="margin-bottom:60px">
+	<div class="caseL">
+		<p class="schoolname">
+			<span><img src="../static/img/scoollogo03.png"></span>
+			<span>南昌市外国语教育集团</span>
+		</p>
+		<p class="schoolintro">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此系列校服的灵感，来源于外国语教育集团的两大特色元素：一是园内素雅的现代化教学建筑; 二是集团“儒雅之人、贤达之士”的育人目标。在设计上，校服主色调采用校园教学楼的灰色，表现外国语学子儒雅、贤达的气质。本系列以时尚国际风体现外国语学校现代国际化风貌。
+		</p>
+	</div>
+	<div class="caseR">
+		<img src="../static/img/imm3.png">
+	</div>
+</div>
+	<div class="hezuo">
+		<p class="hezuotit">
+			部分合作客户展示
+		</p>
+		<p class="hezuotit2" style="margin-bottom:60px">
+
+		<span>
+			1000+
+		</span>	所中小学的共同选择
+
+		</p>
+		<div class="container" >
+			<div class="banner">
+				<div class="swiper-container2">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide" style="background: none;">
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao1/首页学校logo展示_1.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao1/首页学校logo展示_2.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao1/首页学校logo展示_3.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao1/首页学校logo展示_4.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao1/首页学校logo展示_5.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao1/首页学校logo展示_6.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao1/首页学校logo展示_7.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao1/首页学校logo展示_8.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao1/首页学校logo展示_9.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao1/首页学校logo展示_10.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao1/首页学校logo展示_11.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao1/首页学校logo展示_12.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao1/首页学校logo展示_13.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao1/首页学校logo展示_14.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao1/首页学校logo展示_15.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao1/首页学校logo展示_16.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao1/首页学校logo展示_17.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao1/首页学校logo展示_18.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao1/首页学校logo展示_19.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao1/首页学校logo展示_20.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao1/首页学校logo展示_21.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao1/首页学校logo展示_22.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao1/首页学校logo展示_23.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao1/首页学校logo展示_24.png">
+								</p>
+							</a>
+						</div>
+
+						<div class="swiper-slide" style="background: none;">
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao2/首页学校logo展示裁切_19.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao2/首页学校logo展示裁切_21.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao2/首页学校logo展示裁切_23.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao2/首页学校logo展示裁切_25.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao2/首页学校logo展示裁切_27.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao2/首页学校logo展示裁切_29.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao2/首页学校logo展示裁切_31.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao2/首页学校logo展示裁切_33.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao2/首页学校logo展示裁切_53.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao2/首页学校logo展示裁切_55.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao2/首页学校logo展示裁切_57.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao2/首页学校logo展示裁切_59.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao2/首页学校logo展示裁切_61.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao2/首页学校logo展示裁切_63.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao2/首页学校logo展示裁切_65.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao2/首页学校logo展示裁切_67.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao2/首页学校logo展示裁切_87.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao2/首页学校logo展示裁切_89.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao2/首页学校logo展示裁切_91.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao2/首页学校logo展示裁切_93.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao2/首页学校logo展示裁切_95.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao2/首页学校logo展示裁切_97.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao2/首页学校logo展示裁切_99.png">
+								</p>
+							</a>
+							<a class="col-xs-4 col-lg-2" href="">
+								<p class="hezuoimg">
+									<img src="../static/img/tubiao2/首页学校logo展示裁切_101.png">
+								</p>
+							</a>
+						</div>
+					</div>
+					<!-- 如果需要分页器 -->
+					<div class="swiper-pagination2"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!--页脚-->
+<div th:include="footer"></div>
+</body>
+</html>

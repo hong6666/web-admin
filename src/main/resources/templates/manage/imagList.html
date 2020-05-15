@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+    a:hover{
+        text-decoration: none;
+        color: red;
+    }
+</style>
+<body>
+<div class="container" style="margin: 0px auto">
+
+    <div style="">
+        <h3>查看sku下的图片
+            <button type="button" class="btn btn-primary" onclick="javascript:history.go(-1)" >返回</button>
+        </h3>
+        <a href="" class="btn btn-primary" target="model" id="addskuid">添加Img</a>
+        <table class="table table-hover table-bordered" style="border-right:1px solid #ddd; table-layout: inherit;">
+            <thead>
+            <tr>
+                <th class="text-align:center;vertical-align:middle;" style="white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">图片名称</th>
+                <th>图片url</th>
+                <th>图片顺序</th>
+                <th>状态</th>
+                <th>操作修改</th>
+            </tr>
+            </thead>
+            <tbody id="list">
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="/static/js/cheshifive.js"></script>
+<script>
+    function showDataTwo(data) {
+        var str = "";//定义用于拼接的字符串
+        var nums = location.search;
+        var reg = /[1-9][0-9]*/g;
+        var s = nums.match(reg).toString();
+        document.getElementById("addskuid").href='/manage/addimag?' +s;
+        for (var i = 0; i < data.length; i++) {
+            //拼接表格的行和列
+            if (data[i].state == '1'){
+                data[i].state = '启用'
+            }else{
+                data[i].state = '禁用'
+            }
+            str = "<tr><td>"+data[i].picturesname+"</td>"
+                +"<td>"+data[i].picturesurl+"</td>"
+                +"<td>"+data[i].picturessort+"</td>"
+                +"<td>"+data[i].state+"</td>"
+                +"<td>"+"<a class=\"btn btn-primary\" target=\"model\" href=/manage/updateImag?picturesid="+data[i].picturesid+ "/>修改</a>" + "</td></tr>";
+            //追加到table中
+            $("#list").append(str);
+     }
+    }
+</script>
+</body>
+</html>

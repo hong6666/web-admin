@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="/static/css/zzsc.css">
+	<head>
+		<meta charset="utf-8" />
+	</head>
+	<style>
+
+		.news-model{
+			position: relative;
+			top: 25px;
+			line-height: 2.5rem;
+			letter-spacing: 0.1875rem;
+			text-decoration: none;
+			margin: 35px;
+		}
+		.news-model a:hover{
+			text-decoration: none;
+		}
+		.news-model .news-model-text{
+			position: relative;
+			margin: 0 auto; 
+			background-color: rgb(242,242,242);
+			height: 395px;
+			border-radius: 0px 7px 7px 0px;
+			word-wrap: break-word;
+			word-break: break-all;
+			overflow: hidden;
+		}
+		.news-model .news-model-title{
+			font-size: 22px;
+			margin-top: 100px;
+			font-weight: bold;
+		}
+		.news-model .news-model-a{
+			color: black;
+		}
+		.news-model .news-model-a:hover{
+			color: #3354aa;
+		}
+		.news-model .news-model-look{
+			padding: 10px 18px;
+			border: solid 1px;
+			/*color: #8a8a8a;*/
+		}
+		.news-model .news-model-look:hover{
+			background-color: blue;
+			color: white;
+		}
+		.news-model-text a:hover{
+			text-decoration: none;
+		}
+		.news-model .news-model-text p{
+			
+			margin-left: 30px;
+		}
+		.thumbnail-p-text{
+			margin: 0;
+			position: relative;
+			top: 10px;
+			overflow: hidden;
+			text-overflow:ellipsis;
+			white-space: nowrap;
+		}
+		/*.thumbnail img{
+			cursor: pointer;
+			transition: all 0.8s;
+			overflow: hidden;
+		}
+		.thumbnail img:hover{
+			transform: scale(1.12);
+		}*/
+		.news-model img{
+			cursor: pointer;
+			transition: all 0.8s;
+			overflow: hidden;
+		}
+		.news-model img:hover{
+			transform: scale(1.12);
+		}
+		.img-big{
+			height: 100%;
+			overflow: hidden;
+		}
+
+	</style>
+	<body>
+	<!--页眉-->
+	<div th:include="header"></div>
+
+		<!--页面上面一个图片-->
+		<img src="/static/img/5.1-1.jpg" class="img-responsive"/>
+		
+        <!--页面中部-->
+		<!--第一轮-->
+		<div class="news-model">
+			<div class="container" style="padding: 0px;">
+				<div style="border-bottom: solid 1px rgb(204,204,204); height: auto; padding: 5px;">
+					<span style="font-size: 24px;"><b>品牌动态</b></span>
+					<span style="font-size: 16px;float: right;position: relative; top: 8px;"><a href="newsList/1">查看更多<b>&gt;</b></a></span>
+				</div>
+				<div class="col-lg-6 col-md-6 col-xs-12" style="padding:24px 0px; ">
+					<div class="img-big">
+					<img src="/static/img/5.1-2.jpg" th:src="@{${pageInfo.list[0].thumbnail}}" class="img-responsive" style="border-radius: 7px 0px 0px 7px;"/>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-xs-12" style="padding:24px 0px;height: 451px;">
+					<div class="news-model-text">
+						<p class="news-model-title" style="" th:text="${pageInfo.list[0].articletitle}"><b>首届中国校服质量安全及标准应用发展论坛举办</b></p>
+						<p th:text="${pageInfo.list[0].introduction}">2015年“校服新政”实施后，我国中小学生校服新国标就备受关注。10月11日，2017中国国际服装服饰博览会在上海国际会展中心举行，
+						  一系列具有抗菌、防水、防污、防紫外线等功能的校服成为展会亮点。校服品质化、国际化趋势日益明显……</p>
+						<a th:href="${pageInfo.list[0].articleurl}"><p class="news-model-look" style="float: right;margin: 50px;">查看全文</p></a>
+					</div>
+				</div>
+			</div>
+			
+			<!--缩略图-->
+			<div class="container" style="padding: 0px;">
+				<div class="row">
+				    <div class="col-sm-6 col-md-3 col-lg-4">
+				        <div class="thumbnail" style="background-color: rgb(242,242,242);padding: 20px; text-align: center;">
+				            <img src="/static/img/5.1-5.jpg" th:src="@{${pageInfo.list[1].thumbnail}}" alt="中国学生装企业家联盟成立">
+							<a th:href="${pageInfo.list[1].articleurl}" class="news-model-a"><p class="thumbnail-p-text" th:text="${pageInfo.list[1].articletitle}">中国学生装企业家联盟成立</p></a>
+				        </div>
+				    </div>
+				    <div class="col-sm-6 col-md-3 col-lg-4">
+				        <div class="thumbnail" style="background-color: rgb(242,242,242);padding: 20px; text-align: center;">
+				            <img src="/static/img/5.1-5.jpg" th:src="@{${pageInfo.list[2].thumbnail}}" alt="中国学生装企业家联盟成立">
+							<a th:href="${pageInfo.list[2].articleurl}" class="news-model-a"><p class="thumbnail-p-text" th:text="${pageInfo.list[2].articletitle}">中国学生装企业家联盟成立</p></a>
+				        </div>
+				    </div>
+				    <div class="col-sm-6 col-md-3 col-lg-4">
+				        <div class="thumbnail" style="background-color: rgb(242,242,242);padding: 20px; text-align: center;">
+				            <img src="/static/img/5.1-5.jpg" th:src="@{${pageInfo.list[3].thumbnail}}" alt="中国学生装企业家联盟成立">
+							<a th:href="${pageInfo.list[3].articleurl}" class="news-model-a"><p class="thumbnail-p-text" th:text="${pageInfo.list[3].articletitle}">中国学生装企业家联盟成立</p></a>
+				        </div>
+				    </div>	
+				</div>
+			</div>
+		</div>
+
+	<!--第二轮-->
+	<div class="news-model">
+		<div class="container" style="padding: 0px;">
+			<div style="border-bottom: solid 1px rgb(204,204,204); height: auto; padding: 5px;">
+				<span style="font-size: 24px;"><b>行业资讯</b></span>
+				<span style="font-size: 16px;float: right;position: relative; top: 8px;"><a href="newsList/1">查看更多<b>&gt;</b></a></span>
+			</div>
+			<div class="col-lg-6 col-md-6 col-xs-12" style="padding:24px 0px; ">
+				<div class="img-big">
+					<img src="/static/img/5.1-2.jpg" th:src="@{${pageInfo1.list[0].thumbnail}}" class="img-responsive" style="border-radius: 7px 0px 0px 7px;"/>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 col-xs-12" style="padding:24px 0px;height: 451px;">
+				<div class="news-model-text">
+					<p class="news-model-title" style="" th:text="${pageInfo1.list[0].articletitle}"><b>首届中国校服质量安全及标准应用发展论坛举办</b></p>
+					<p th:text="${pageInfo1.list[0].introduction}">2015年“校服新政”实施后，我国中小学生校服新国标就备受关注。10月11日，2017中国国际服装服饰博览会在上海国际会展中心举行，
+						一系列具有抗菌、防水、防污、防紫外线等功能的校服成为展会亮点。校服品质化、国际化趋势日益明显……</p>
+					<a th:href="${pageInfo1.list[0].articleurl}"><p class="news-model-look" style="float: right;margin: 50px;">查看全文</p></a>
+				</div>
+			</div>
+		</div>
+
+	<!--缩略图-->
+	<div class="container" style="padding: 0px;">
+		<div class="row">
+			<div class="col-sm-6 col-md-3 col-lg-4">
+				<div class="thumbnail" style="background-color: rgb(242,242,242);padding: 20px; text-align: center;">
+					<img src="/static/img/5.1-5.jpg" th:src="@{${pageInfo1.list[1].thumbnail}}" alt="中国学生装企业家联盟成立">
+					<a th:href="${pageInfo1.list[1].articleurl}" class="news-model-a"><p class="thumbnail-p-text" th:text="${pageInfo1.list[1].articletitle}">中国学生装企业家联盟成立</p></a>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-3 col-lg-4">
+				<div class="thumbnail" style="background-color: rgb(242,242,242);padding: 20px; text-align: center;">
+					<img src="/static/img/5.1-5.jpg" th:src="@{${pageInfo1.list[2].thumbnail}}" alt="中国学生装企业家联盟成立">
+					<a th:href="${pageInfo1.list[2].articleurl}" class="news-model-a"><p class="thumbnail-p-text" th:text="${pageInfo1.list[2].articletitle}">中国学生装企业家联盟成立</p></a>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-3 col-lg-4">
+				<div class="thumbnail" style="background-color: rgb(242,242,242);padding: 20px; text-align: center;">
+					<img src="/static/img/5.1-5.jpg" th:src="@{${pageInfo1.list[3].thumbnail}}" alt="中国学生装企业家联盟成立">
+					<a th:href="${pageInfo1.list[3].articleurl}" class="news-model-a"><p class="thumbnail-p-text" th:text="${pageInfo1.list[3].articletitle}">中国学生装企业家联盟成立</p></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<!--第三轮-->
+	<div class="news-model">
+		<div class="container" style="padding: 0px;">
+			<div style="border-bottom: solid 1px rgb(204,204,204); height: auto; padding: 5px;">
+				<span style="font-size: 24px;"><b>校服文化</b></span>
+				<span style="font-size: 16px;float: right;position: relative; top: 8px;"><a href="newsList/1">查看更多<b>&gt;</b></a></span>
+			</div>
+			<div class="col-lg-6 col-md-6 col-xs-12" style="padding:24px 0px; ">
+				<div class="img-big">
+					<img src="/static/img/5.1-2.jpg" th:src="@{${pageInfo2.list[0].thumbnail}}" class="img-responsive" style="border-radius: 7px 0px 0px 7px;"/>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6 col-xs-12" style="padding:24px 0px;height: 451px;">
+				<div class="news-model-text">
+					<p class="news-model-title" style="" th:text="${pageInfo2.list[0].articletitle}"><b>首届中国校服质量安全及标准应用发展论坛举办</b></p>
+					<p th:text="${pageInfo2.list[0].introduction}">2015年“校服新政”实施后，我国中小学生校服新国标就备受关注。10月11日，2017中国国际服装服饰博览会在上海国际会展中心举行，
+						一系列具有抗菌、防水、防污、防紫外线等功能的校服成为展会亮点。校服品质化、国际化趋势日益明显……</p>
+					<a th:href="${pageInfo2.list[0].articleurl}"><p class="news-model-look" style="float: right;margin: 50px;">查看全文</p></a>
+				</div>
+			</div>
+		</div>
+
+		<!--缩略图-->
+		<div class="container" style="padding: 0px;">
+			<div class="row">
+				<div class="col-sm-6 col-md-3 col-lg-4">
+					<div class="thumbnail" style="background-color: rgb(242,242,242);padding: 20px; text-align: center;">
+						<img src="/static/img/5.1-5.jpg" th:src="@{${pageInfo2.list[1].thumbnail}}" alt="中国学生装企业家联盟成立">
+						<a th:href="${pageInfo2.list[1].articleurl}" class="news-model-a"><p class="thumbnail-p-text" th:text="${pageInfo2.list[1].articletitle}">中国学生装企业家联盟成立</p></a>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-3 col-lg-4">
+					<div class="thumbnail" style="background-color: rgb(242,242,242);padding: 20px; text-align: center;">
+						<img src="/static/img/5.1-5.jpg" th:src="@{${pageInfo2.list[2].thumbnail}}" alt="中国学生装企业家联盟成立">
+						<a th:href="${pageInfo2.list[2].articleurl}" class="news-model-a"><p class="thumbnail-p-text" th:text="${pageInfo2.list[2].articletitle}">中国学生装企业家联盟成立</p></a>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-3 col-lg-4">
+					<div class="thumbnail" style="background-color: rgb(242,242,242);padding: 20px; text-align: center;">
+						<img src="/static/img/5.1-5.jpg" th:src="@{${pageInfo2.list[3].thumbnail}}" alt="中国学生装企业家联盟成立">
+						<a th:href="${pageInfo2.list[3].articleurl}" class="news-model-a"><p class="thumbnail-p-text" th:text="${pageInfo2.list[3].articletitle}">中国学生装企业家联盟成立</p></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 代码 开始 -->
+	<div id="leftsead" style="margin-top: 75px">
+		<ul>
+			<li>
+				<a href="javascript:void(0)" class="youhui" style="text-decoration:none">
+					<img src="../static/img/li2.png" width="47" height="49" class="shows" />
+					<img src="../static/img/ewm222.png" width="145" class="2wm" style="display:none;margin:-100px 57px 0 0" />
+				</a>
+			</li>
+			<li id="tel">
+				<a href="javascript:void(0)" style="text-decoration:none">
+					<div class="hides" style="width:250px;display:none;" id="tels">
+						<div class="hides" id="p4">
+							<img src="../static/img/li1.png">
+						</div>
+						<div class="hides" id="p3"><span style="color:#FFF;font-size:12px;" >服务热线：400-90-10086</span>
+						</div>
+					</div>
+					<img src="../static/img/li1.png" width="47" height="49" class="shows" />
+				</a>
+			</li>
+			<li id="btn">
+				<a id="top_btn">
+					<!--<div class="hides" style="width:161px;display:none ;">-->
+					<!--<img src="../static/img/li3.png" width="47" height="49" />-->
+					<!--</div>-->
+					<img src="../static/img/li3.png" width="47" height="49"  />
+				</a>
+			</li>
+		</ul>
+	</div>
+
+	<script>
+
+        $(document).ready(function(){
+
+            $("#leftsead a").hover(function(){
+                if($(this).prop("className")=="youhui"){
+                    $(this).children("img.hides").show();
+                }else{
+                    $(this).children("div.hides").show();
+                    $(this).children("img.shows").hide();
+                    $(this).children("div.hides").animate({marginRight:'0px'},'0');
+                }
+            },function(){
+                if($(this).prop("className")=="youhui"){
+                    $(this).children("img.hides").hide();
+                }else{
+                    $(this).children("div.hides").animate({marginRight:'-163px'},0,function(){$(this).hide();$(this).next("img.shows").show();});
+                }
+            });
+
+            $("#top_btn").click(function(){if(scroll=="off") return;$("html,body").animate({scrollTop: 0}, 600);});
+
+            //右侧导航 - 二维码
+            $(".youhui").mouseover(function(){
+                $(this).children(".2wm").show();
+            })
+            $(".youhui").mouseout(function(){
+                $(this).children(".2wm").hide();
+            });
+
+
+        });
+
+
+	</script>
+	<!-- 代码 结束 -->
+
+
+		<!--&lt;!&ndash;第二轮&ndash;&gt;
+		<div class="news-model">
+			<div class="container" style="padding: 0px;">
+				<div style="border-bottom: solid 1px rgb(204,204,204); height: auto; padding: 5px;">
+					<span style="font-size: 24px;"><b>行业资讯</b></span>
+					<span style="font-size: 16px;float: right;position: relative; top: 11px;"><a href="publicWelfare">查看更多<b>&gt;</b></a></span>
+				</div>
+				<div class="col-lg-6 col-md-6 col-xs-12" style="padding:24px 0px; ">
+					<div class="img-big">
+						<img src="/static/img/5.1-4-1.png" class="img-responsive" style="border-radius: 7px 0px 0px 7px;"/>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 col-xs-12" style="padding:24px 0px;height: 451px;">
+					<div class="news-model-text">
+						<p class="news-model-title" style=""><b>斯沃德向夺刀少年捐赠笔记本电脑</b></p>
+						<p>2014年7月7日上午，江西斯沃德教育文化发展有限公司总经理刘华强赶赴宜春，
+						代表企业向夺刀少年柳艳兵、易政勇分别赠送了一台笔记本电脑，并勉励见义勇为少年入大学后，好好学习，力争全面发展……</p>
+						<a href="javascript:0;"><p class="news-model-look" style="float: right;margin: 50px;">查看全文</p></a>
+					</div>
+				</div>
+			</div>
+			
+			&lt;!&ndash;缩略图&ndash;&gt;
+			<div class="container" style="padding: 0px;">
+				<div class="row">
+				    <div class="col-sm-6 col-md-4 col-lg-4">
+				        <div class="thumbnail" style="background-color: rgb(242,242,242);padding: 20px; text-align: center;">
+				            <img src="/static/img/5.1-3.jpg" alt="斯沃德向夺刀少年捐赠电脑">
+							<a href="javascript:0;" class="news-model-a"><p class="thumbnail-p-text">斯沃德向夺刀少年捐赠电脑</p></a>
+				        </div>
+				    </div>
+				    <div class="col-sm-6 col-md-4 col-lg-4">
+				        <div class="thumbnail" style="background-color: rgb(242,242,242);padding: 20px; text-align: center;">
+				            <img src="/static/img/5.1-3.jpg" alt="斯沃德向夺刀少年捐赠电脑">
+							<a href="javascript:0;" class="news-model-a"><p class="thumbnail-p-text">斯沃德向夺刀少年捐赠电脑</p></a>
+				        </div>
+				    </div>
+				    <div class="col-sm-6 col-md-4 col-lg-4">
+				        <div class="thumbnail" style="background-color: rgb(242,242,242);padding: 20px; text-align: center;">
+				            <img src="/static/img/5.1-3.jpg" alt="斯沃德向夺刀少年捐赠电脑">
+							<a href="javascript:0;" class="news-model-a"><p class="thumbnail-p-text">斯沃德向夺刀少年捐赠电脑</p></a>
+				        </div>
+				    </div>	
+				</div>
+			</div>
+		</div>
+		
+		&lt;!&ndash;第三轮&ndash;&gt;
+		<div class="news-model">
+				<div class="container" style="padding: 0px;">
+					<div style="border-bottom: solid 1px rgb(204,204,204); height: auto; padding: 5px;">
+						<span style="font-size: 24px;"><b>校服文化</b></span>
+						<span style="font-size: 16px;float: right;position: relative; top: 11px;"><a href="culture">查看更多<b>&gt;</b></a></span>
+					</div>
+					<div class="col-lg-6 col-md-6 col-xs-12" style="padding:24px 0px; ">
+						<div class="img-big">
+							<img src="/static/img/5.1-6.jpg" class="img-responsive" style="border-radius: 7px 0px 0px 7px;"/>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-6 col-xs-12" style="padding:24px 0px;height: 451px;">
+						<div class="news-model-text">
+							<p class="news-model-title" style=""><b>南昌市首届中小学生校园服饰文化节成功举办</b></p>
+							<p>7月8日，南昌市首届中小学生校园服饰文化节在南昌市十九中学成功举办，这在全国尚属首次，引领了一个地区的校园文化创新、礼仪教育和美育教育。
+							来自江西省的20多所中小学生身穿精心设计的新时代新校服，闪亮登台，大展校园青春色彩，尽绽校服文化魅力。</p>
+							<a href="javascript:0;"><p class="news-model-look" style="float: right;margin: 50px;">查看全文</p></a>
+						</div>
+					</div>
+				</div>
+				
+				&lt;!&ndash;缩略图&ndash;&gt;
+				<div class="container" style="padding: 0px;">
+					<div class="row">
+					    <div class="col-sm-6 col-md-3 col-lg-4">
+					        <div class="thumbnail" style="background-color: rgb(242,242,242);padding: 20px; text-align: center;">
+					            <img src="/static/img/5.1-7.jpg" alt="南昌市首届中小学生校园服饰文化节成功举办">
+								<a href="javascript:0;" class="news-model-a"><p class="thumbnail-p-text">南昌市首届中小学生校园服饰文化节成功举办</p></a>
+					        </div>
+					    </div>
+					    <div class="col-sm-6 col-md-3 col-lg-4">
+					        <div class="thumbnail" style="background-color: rgb(242,242,242);padding: 20px; text-align: center;">
+					            <img src="/static/img/5.1-7.jpg" alt="南昌市首届中小学生校园服饰文化节成功举办">
+								<a href="javascript:0;" class="news-model-a"><p class="thumbnail-p-text">南昌市首届中小学生校园服饰文化节成功举办</p></a>
+					        </div>
+					    </div>
+					    <div class="col-sm-6 col-md-3 col-lg-4">
+					        <div class="thumbnail" style="background-color: rgb(242,242,242);padding: 20px; text-align: center;">
+					            <img src="/static/img/5.1-7.jpg" alt="南昌市首届中小学生校园服饰文化节成功举办">
+								<a href="javascript:0;" class="news-model-a"><p class="thumbnail-p-text">南昌市首届中小学生校园服饰文化节成功举办</p></a>
+					        </div>
+					    </div>	
+					</div>
+				</div>
+			</div>-->
+
+
+	  <!--页脚-->
+	   <div th:include="footer"></div>
+    </body>
+</html>

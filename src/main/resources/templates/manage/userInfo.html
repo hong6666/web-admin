@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>系统设置</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="page-header">
+    <h1>网站管理信息</h1>
+</div>
+<br/>
+<div class="input-group input-group-lg"><!--input-group-lg-->
+    <span class="input-group-addon">用户名</span>
+    <input type="text" class="form-control" id="loginname" th:value="${user.loginname}">
+</div><br>
+<div class="input-group input-group-lg"><!--input-group-lg-->
+    <span class="input-group-addon">密码</span>
+    <input type="text" class="form-control" id="password" th:value="${user.password}">
+</div><br>
+<button type="button" class="btn btn-primary" onclick="publicEdit()">保存</button>
+</body>
+<script th:inline="javascript">
+    function publicEdit() {
+        var publicInfo = {
+            id : [[${user.id}]],
+            loginname:$("#loginname").val(),
+            password:$("#password").val()
+        }
+        $.ajax({
+            url:"/manage/login",//ajax不支持put发送，暂时没时间研究。所以用post
+            type:"PUT",
+            data:JSON.stringify(publicInfo),
+            contentType:"application/json",
+            success: function (data) {
+                alert(data)
+            },
+            error:function (data) {
+                alert(data)
+            }
+        })
+    }
+</script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>添加栏目</title>
+</head>
+<body>
+<div class="page-header">
+    <h1>栏目信息添加</h1>
+</div>
+<br/>
+<div class="input-group input-group-lg"><!--input-group-lg-->
+    <span class="input-group-addon">文章栏目</span>
+    <input type="text" class="form-control" id="columnname">
+</div><br>
+<div class="input-group input-group-lg"><!--input-group-lg-->
+    <span class="input-group-addon">状态</span>
+    <select class="form-control" id="state">
+        <option value="1">创建</option>
+        <option value="2">禁用</option>
+    </select>
+</div><br>
+<button type="button" class="btn btn-primary" onclick="publicEdit()">保存</button>
+<a class="btn btn-primary" href="/manage/columnList/1" target="model" >返回</a>
+</body>
+<script th:inline="javascript">
+    function publicEdit() {
+        var publicInfo = {
+            columnname:$("#columnname").val(),
+            state:$("#state").val()
+        }
+        $.ajax({
+            url:"/manage/newsColumn",//ajax不支持put发送，暂时没时间研究。所以用post
+            type:"POST",
+            data:JSON.stringify(publicInfo),
+            contentType:"application/json",
+            success: function (data) {
+                alert(data)
+            },
+            error:function (data) {
+                alert(data)
+            }
+        })
+    }
+</script>
+</body>
+</html>

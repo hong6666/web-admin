@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<style>
+    a:hover{
+        text-decoration: none;
+        color: red;
+    }
+</style>
+<body>
+<div class="container" style="margin: 0px auto">
+
+    <div style="">
+        <h3>套装详情</h3>
+        <a href="/manage/addsku" class="btn btn-primary" target="model">添加Sku</a>
+        <table class="table table-hover table-bordered" style="border-right:1px solid #ddd; table-layout: inherit;">
+            <thead>
+            <tr>
+                <th class="text-align:center;vertical-align:middle;" style="white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">编号</th>
+                <th>名字</th>
+                <th>所属季节</th>
+                <th>状态</th>
+                <th>操作</th>
+                <th>查看图片</th>
+            </tr>
+            </thead>
+            <tbody id="list">
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="/static/js/cheshitwo.js"></script>
+<script>
+    function showData(data) {
+        var str = "";//定义用于拼接的字符串
+        for (var i = 0; i < data.length; i++) {
+            if(data[i].season == '1'){
+                data[i].season = '春秋'
+            }else if (data[i].season == '2'){
+                data[i].season = '夏'
+            } else if (data[i].season == '3'){
+                data[i].season = '冬'
+            }
+            if (data[i].state == '1'){
+                data[i].state = '启用'
+            }else{
+                data[i].state = '禁用'
+            }
+            //拼接表格的行和列
+            str = "<tr><td>"+data[i].skusid+"</td>"
+                +"<td>"+data[i].skusname+"</td>"
+                +"<td id='tb1'>"+ data[i].season +"</td>"
+                +"<td id='tb2'>"+data[i].state +"</td>"
+                +"<td>"+"<a class=\"btn btn-primary\" target=\"model\" href=/manage/updatesku?skusId="+data[i].skusid+ "/>修改</a>" + "</td>"
+                +"<td>"+"<a class=\"btn btn-primary\" target=\"model\" href=/manage/imaglist?skusId="+data[i].skusid+ "/>查看</a>" + "</td></tr>";
+            //追加到table中
+            $("#list").append(str);
+     }
+    }
+</script>
+</body>
+</html>

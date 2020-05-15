@@ -1,0 +1,716 @@
+a{
+    color: #000;
+}
+.footer{
+
+    background: #003399;
+
+    padding: 40px 0;
+}
+.footerL{
+
+}
+.footerM{
+
+    width: 38%;
+
+    margin-top: 59px;
+}
+.footerlogo{
+
+}
+.footerlogo img{
+
+}
+.address{
+
+    color: #fff;
+
+    font-size: 14px;
+}
+.hotline{
+
+    font-size: 20px;
+
+    color: #fff;
+
+    font-weight: 700;
+}
+.footlink{
+
+    text-align: right;
+}
+.footlink a{
+
+    color: #fff;
+
+    font-size: 14px;
+
+    margin: 0 2px;
+}
+.beianhao{
+
+    text-align: right;
+
+    color: #fff;
+}
+.footewm{
+
+    width: 12%;
+
+    margin-top: 20px;
+}
+.footewm img{
+
+    width: 100%;
+}
+.footewm p{
+
+    font-size: 12px;
+
+    color: #fff;
+}
+.banner{
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+.banner img{
+    width: 100%;
+}
+.indextit{
+
+    margin: 40px 0;
+}
+.indextit1{
+
+    color: #08348B;
+
+    font-size: 40px;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    margin: 60px 0px 0px 0px;
+}
+.indextit2{
+
+    font-size: 20px;
+
+    text-align: center;
+
+    margin: 0px 0px 50px 0px;
+}
+.intro{
+
+    margin: 0 auto;
+}
+.introL{
+
+    font-size: 16px;
+
+    color: #666;
+}
+.introR{
+
+}
+.introR img{
+
+}
+.introL p {
+
+}
+.introL p b{
+
+    color: #08348B;
+}
+.introL a{
+
+    width: 145px;
+
+    height:45px;
+
+    border:1px solid rgba(0,51,153,1);
+
+    border-radius:0px;
+
+    display: block;
+
+    color: #333;
+
+    font-size: 20px;
+
+    text-align: center;
+
+    line-height: 45px;
+
+    margin-top: 40px;
+}
+.introR{
+
+}
+.introR img{
+
+    width: 100%;
+}
+.introR video{
+
+
+}
+.yanfa{
+
+}
+.yanfa img{
+
+    width: 100%;
+}
+.zaidao{
+
+    font-size: 40px;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    margin: 70px 0;
+}
+.indexmap{
+
+}
+.indexmap img{
+
+    width: 100%;
+}
+.mapintro{
+
+}
+.mapintro1{
+
+    font-size: 30px;
+
+    color: #333;
+
+    font-weight: 700;
+
+    margin-top: 200px;
+}
+.mapintro2 span{
+
+}
+.mapintro2 span b{
+
+    color: #08348B;
+
+    font-size: 32px;
+}
+.mapintro2{
+
+    font-size: 18px;
+
+    color: #333;
+}
+.shichang{
+
+}
+.shichang span:first-child{
+
+    font-size: 20px;
+
+    color: #333;
+}
+.shichang span:last-child{
+
+    font-size: 16px;
+
+    color: #666;
+}
+.hezuotit{
+
+}
+.hezuo1{
+    text-align: center;
+}
+.hezuo1 a{
+    text-align: center;
+    color: #000;
+}
+.hezuo1 a img{
+    width: 60%;
+}
+.hezuo a{
+
+    width: 12.5%;
+
+    text-align: center;
+
+    color: #333333;
+
+    font-size: 16px;
+}
+.hezuoimg{
+
+    text-align: center;
+}
+.hezuoimg img{
+
+    width: 70%;
+}
+.hezuoname{
+
+}
+.morecase{
+
+    display: block;
+
+    border: 1px solid rgba(0,51,153,1);
+
+    width: 200px;
+
+    height: 50px;
+
+    text-align: center;
+
+    line-height: 50px;
+
+    font-size: 22px;
+
+    /*border-radius: 10px;*/
+
+    margin: 30px auto;
+
+    color: rgba(0,51,153,1);
+
+    cursor: pointer;
+}
+.zaidaobox{
+    background: #eee;
+    overflow: hidden;
+    padding-bottom: 30px;
+}
+/*csae*/
+.casetit{
+
+    font-size: 36px;
+
+    color: #000;
+
+    text-align: center;
+
+    margin: 30px auto;
+}
+.case{
+
+    position: relative;
+
+    width: 100%;
+
+    box-shadow: 1px 1px 14px 1px #eee;
+
+    padding: 0px;
+
+    margin: 20px auto;
+}
+.caseL{
+
+    float: left;
+
+    position: absolute;
+
+    width: 53%;
+
+    background: url(../img/tribg.png) no-repeat;
+
+    background-size: 100% 100%;
+
+    height: 100%;
+
+    top: 0;
+
+    left: 0;
+
+    padding: 30px;
+}
+.schoolname{
+
+}
+.schoolname span{
+
+    font-size: 24px;
+
+    color: #000;
+}
+.schoolname img{
+
+}
+.schoolintro{
+
+    font-size: 14px;
+
+    color: #666;
+
+    line-height: 27px;
+
+    width: 93%;
+
+    /* margin: 0 auto; */
+}
+.caseR{
+
+    float: right;
+
+    width: 50%;
+}
+.caseR img{
+
+}
+
+.hezuotit{
+
+    font-size: 36px;
+
+    color: #000;
+
+    text-align: center;
+
+    margin: 50px 0px 20px 0px;
+}
+.allprotit{
+
+    background: #08307e;
+
+    text-align: center;
+
+    padding: 40px;
+
+    color: #fff;
+}
+.allprotit1{
+
+    font-size: 40px;
+
+    font-weight: 700;
+}
+.allprotit2{
+
+    font-size: 28px;
+}
+.shaixuan{
+
+    background: #F4F4F4;
+
+    border-radius: 10px;
+
+    margin: 20px auto;
+
+    clear: both;
+
+    height: 59px;
+
+    padding-top: 16px;
+
+    padding-left: 20px;
+
+    width: 98%;
+}
+.shaixuan span:first-child{
+
+    display: block;
+
+    float: left;
+
+    font-size: 18px;
+
+    color: #333;
+
+    font-weight: 700;
+}
+.sxtiaojian{
+
+    float: left;
+
+    position: relative;
+
+    width: 112px;
+
+    text-align: center;
+
+    margin: 10px;
+
+}
+.shaixunname{
+    background: url("../img/down.png") no-repeat right;
+}
+.shaixunname.on{
+    background: url("../img/up.png") no-repeat right;
+}
+.selectpicker {
+    /*display: none;*/
+    position: absolute;
+
+    width: 110px;
+
+    z-index: 10;
+
+    height:25px;
+
+    background:rgba(244,244,244,1);
+
+    box-shadow:0px 0px 4px 0px rgba(0, 0, 0, 0.16);
+
+    border-radius:5px;
+
+    top: -10px;
+
+    margin-left:-60px;
+}
+.selectpicker option{
+
+    /*display: block;*/
+
+    height: 35px;
+
+    line-height: 42px;
+
+    font-size: 14px;
+
+    color: #666;
+}
+.shaxianpro{
+
+    overflow: hidden;
+
+    width: 100%;
+}
+.shaxianpro a{
+    margin: 20px 0;
+}
+.shaxianpro img{
+    width: 100%;
+}
+.hezuo{background: #eee;overflow: hidden;margin-top: 50px;padding-bottom: 30px}
+.hezuotit2{
+    font-size: 36px;
+    color: #000;
+    text-align: center;
+}
+.hezuotit2 span{
+    color: #08348B;
+}
+.hezuobig{
+
+}
+.hezuobig img{
+    width: 100%;
+}
+
+/*tiyan*/
+.ty1{
+
+}
+.ty1 img{
+    width: 100%;
+}
+.tytit{
+
+    margin: 50px 0;
+
+    text-align: center;
+
+    font-size: 24px;
+
+    color: #000;
+
+    font-weight: 700;
+}
+.tytit1{
+
+    font-size: 40px;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    margin: 30px 0px 0px 0px;
+}
+.tyti2{
+
+}
+.tyti2 img{
+    width: 20px !important;
+    height: 20px !important;
+}
+.tytit3{
+
+    font-size: 16px;
+
+    color: #666;
+
+    text-align: center;
+
+    font-weight: normal;
+}
+.ty2{
+
+}
+.ty2 img{
+    width: 100%;
+    height: 330px;
+    margin: 10px;
+}
+.sos{
+
+    background: #F5F5F5;
+
+    height: 330px;
+
+    border-radius: 10px;
+
+    margin-top: 10px;
+}
+.sos p:first-child{
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    margin: 98px 0 0 40px;
+}
+.sos p:last-child{
+
+    color: #666;
+
+    margin-left: 44px;
+
+    margin-top: 17px;
+
+    font-size: 16px;
+}
+.ty3{
+    background: url("../img/keathbg.png") no-repeat bottom;
+    background-size: 100%;
+    padding: 22px 0 147px 0;
+}
+.ty3 img{
+    width: 100%;
+}
+.abouttit{
+
+    font-size: 34px;
+
+    text-align: center;
+
+    color: #000;
+
+    font-weight: 700;
+
+    border-bottom: 3px solid #083187;
+
+    width: 200px;
+
+    margin: 0px auto;
+
+    padding: 40px 0px 0px 0px;
+
+    margin-top: 0px;
+
+    margin-bottom: 30px;
+}
+.ysnum{
+
+    font-size: 80px;
+
+    color: #083187;
+}
+.yst1{
+
+    font-size: 24px;
+
+    color: #000;
+
+    font-weight: 600;
+    margin: 1px;
+    margin-top: 25px
+;
+
+}
+.yst2{
+
+    color: #333;
+
+    font-size: 20px;
+
+    margin: 0px 0px 20px 0px;
+}
+.yst3{
+
+    font-size: 17px;
+
+    color: #666;
+}
+.ty4 img{
+    width: 100%;
+}
+.about {
+    margin: 70px auto;
+}
+.about h2{
+    margin-top: 50px;
+}
+
+.eg{
+    text-align: center;
+    width: 90%;
+    margin: 30px auto;
+}
+.eg img{
+    width: 61%;
+}
+.prev1{
+    background: url('/static/img/left08.png') no-repeat;
+    width: 43px;
+    height: 100px;
+    background-size: 100% 100%;
+    left: -7px;
+}
+.next1{
+    background: url('/static/img/right08.png') no-repeat;
+    width: 43px;
+    height: 100px;
+    background-size: 100% 100%;
+}
+
+.prev2{
+    background: url('/static/img/perv2.png') no-repeat;
+    width: 43px;
+    height: 100px;
+    background-size: 100% 100%;
+    left: -7px;
+    transform: translateY(-80px);
+
+}
+.next2{
+    background: url('/static/img/next.png') no-repeat;
+    width: 43px;
+    height: 100px;
+    background-size: 100% 100%;
+    transform: translateY(-80px);
+}
+.ys{
+    margin: 60px auto;
+}
+.ys img{
+    width: 100%;
+}
+.zhengshu{
+    padding: 30px 0;
+    background: #f5f5f5;
+    margin: 50px 0 0;
+}
+@media (min-width: 1200px) {
+    .container {
+        width: 1200px;
+    }
+}
+
+
